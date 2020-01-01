@@ -40,7 +40,7 @@ measurements will suffer accordingly, just as if we were trying to
 force square pegs into round holes.
 
 For example, the natural numbers make lousy candidates for measuring
-distances within a physics laboratory. Distances in the lab have
+distances in a physics laboratory. Distances in the lab have
 properties such as, for example, the fact that for any two distinct
 distances, there is an intermediate distance strictly between them.
 The natural numbers lack this property. Imagine the poor physicist,
@@ -57,11 +57,24 @@ take that for granted. One particular property of the real numbers
 is the following.
 
 \begin{lemma}
-\label{archimedeanlemma}
-(The Archimedean Property of the Real Numbers)
+\label{specializedarchimedeanlemma}
+(The Archimedean Property)
+Let $r>0$ be any positive real number.
+For any real number $y$, there is some natural number $n$
+such that $nr>y$.
+\end{lemma}
+
+Rather than directly prove Lemma \ref{specializedarchimedeanlemma},
+we will prove a generalized result which is better suited to shed
+light on non-Archimedean structures.
+
+\begin{lemma}
+\label{generalizedarchimedeanlemma}
+(The Generalized Archimedean Property)
+Let $r>0$ be any positive real number.
 If $x_1,x_2,\ldots$ is an infinite sequence of real numbers,
 where each $x_{i+1}$ is significantly larger than $x_i$---by which
-we mean that each $x_{i+1}\geq x_i+1$---then, for every real number $y$,
+we mean that each $x_{i+1}\geq x_i+r$---then, for every real number $y$,
 there exists some $i$ such that $x_i>y$.
 \end{lemma}
 
@@ -69,9 +82,9 @@ there exists some $i$ such that $x_i>y$.
 If not, then there is some $y$ such that $y\geq x_i$ for all $i$.
 Thus, $X=\{x_1,x_2,\ldots\}$ has an upper bound. By the completeness
 of $\mathbb R$, $X$ must have a least upper bound $z\in\mathbb R$.
-Since $z$ is the least upper bound for $X$, $z-1$ is not an upper bound
-for $X$, so there is some $i$ such that $x_i>z-1$.
-By assumption, $x_{i+1}>x_i+1$, so $x_{i+1}>z$, contradicting the choice
+Since $z$ is the least upper bound for $X$, $z-r$ is not an upper bound
+for $X$, so there is some $i$ such that $x_i>z-r$.
+By assumption, $x_{i+1}>x_i+r$, so $x_{i+1}>z$, contradicting the choice
 of $z$.
 \end{proof}
 
@@ -94,7 +107,7 @@ It is impossible to assign real number fuzziness measures to our
 widgets in such a way that fuzzier widgets get larger real number
 fuzziness measures and such that significantly fuzzier widgets get
 significantly larger real number fuziness measures. That would
-contradict Lemma \ref{archimedeanlemma}.
+contradict Lemma \ref{generalizedarchimedeanlemma}.
 
 The premise of this paper is that certain structures are inherently
 non-Archimedean, and that when deciding how to measure such structures,
