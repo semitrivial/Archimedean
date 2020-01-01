@@ -65,8 +65,8 @@ such that $nr>y$.
 \end{lemma}
 
 Rather than directly prove Lemma \ref{specializedarchimedeanlemma},
-we will prove a generalized result better suited to adaptation
-to other contexts than the real numbers.
+we will prove a generalized result more adaptable
+to other structures.
 
 \begin{lemma}
 \label{generalizedarchimedeanlemma}
@@ -118,7 +118,7 @@ we should be aware of potential consequences of choosing an
 Archimedean number system for those measurements.
 
 
-\section{Background}
+\section{Background and Preliminaries}
 
 The Archimedean property is named after Archimedes of Syracuse.
 It appears as the fifth axiom in his \emph{On the Sphere
@@ -138,6 +138,66 @@ The Archimedean property is also closely related to Definition 4 of Book V of Eu
     multiplied, are capable of exceeding one
     another.
 \end{quote}
+
+The real numbers possess the Archimedean property, but other structures
+may or may not possess the property. In order to make this more precise,
+we introduce the following formalism, adapting from Lemma \ref{generalizedarchimedeanlemma}.
+
+\begin{definition}
+    A \emph{significantly ordered structure} is a set $X$ along with
+    two orderings $<$ and $\vartriangleleft$.
+    For $x,y\in X$, we say $y$ is \emph{greater} than $x$ if $x<y$, and
+    we say $y$ is \emph{significantly greater} than $x$ if $x\vartriangleleft y$.
+    A significantly ordered structure is said to be \emph{Archimedean} if it
+    has the following property: for every $X$-sequence
+    $x_0\vartriangleleft x_1\vartriangleleft x_2 \vartriangleleft \cdots$,
+    for every $x_\infty\in X$, there is some $i$ such that $x_\infty<x_i$.
+\end{definition}
+
+The prototypical example of an Archimedean significantly ordered structure is the real
+numbers with the usual ordering $<$ and the significantly-less-than
+ordering defined such that $x\vartriangleleft y$ if $y\geq x+1$.
+Before giving some examples of significantly ordered structures that are non-Archimedean,
+we will first develop some more formalism.
+
+\begin{definition}
+    Suppose $(X,<_X,\vartriangleleft_X)$ and $(Y,<_Y,\vartriangleleft_Y)$
+    are two significantly ordered structures.
+    A function $f:X\to Y$ is \emph{order-preserving} if it satisfies the following
+    requirements:
+    \begin{enumerate}
+        \item
+            For all $x_1,x_2\in X$, $x_1<_X x_2$ if and only if $f(x_1)<_Yf(x_2)$.
+        \item
+            For all $x_1,x_2\in X$, $x_1\vartriangleleft_X x_2$ if and only if
+            $f(x_1)\vartriangleleft_Yf(x_2)$.
+    \end{enumerate}
+\end{definition}
+
+The following proposition formalizes the dilemma we illustrated with the
+example of fuzzy widgets in the Introduction (think of $X$ as things we
+want to measure, and think of $Y$ as a number system we want to use to
+perform said measurement).
+
+\begin{proposition}
+    Suppose $(X,<_X,\vartriangleleft_X)$ and $(Y,<_Y,\vartriangleleft_Y)$
+    are significantly ordered structures.
+    If $Y$ is Archimedean and $X$ is non-Archimedean, then there cannot exist
+    an order-preserving function $f:X\to Y$.
+\end{proposition}
+
+\begin{proof}
+    Assume, for sake of a contradiction, that there is some order-preserving
+    $f:X\to Y$.
+    Since $X$ is non-Archimedean, there is some $X$-sequence
+    $x_0\vartriangleleft_X x_1\vartriangleleft_X \cdots$ and some
+    $x_\infty\in X$ such that there is no $i$ such that $x_\infty<_X x_i$.
+    Since $f$ is order-preserving,
+    $f(x_0)\vartriangleleft_Y f(x_1) \vartriangleleft_Y \cdots$.
+    Since $Y$ is Archimedean, there must be some $i$ such that
+    $f(x_\infty)<_Y f(x_i)$.
+    Since $f$ is order-preserving, $x_\infty<_X x_i$, a contradiction.
+\end{proof}
 
 \section{First Example: Reinforcement learning rewards}
 
