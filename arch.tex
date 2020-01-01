@@ -72,7 +72,7 @@ light on non-Archimedean structures.
 \label{generalizedarchimedeanlemma}
 (The Generalized Archimedean Property)
 Let $r>0$ be any positive real number.
-If $x_1,x_2,\ldots$ is an infinite sequence of real numbers,
+If $x_0,x_1,x_2,\ldots$ is an infinite sequence of real numbers,
 where each $x_{i+1}$ is significantly larger than $x_i$---by which
 we mean that each $x_{i+1}\geq x_i+r$---then, for every real number $y$,
 there exists some $i$ such that $x_i>y$.
@@ -80,13 +80,16 @@ there exists some $i$ such that $x_i>y$.
 
 \begin{proof}
 If not, then there is some $y$ such that $y\geq x_i$ for all $i$.
-Thus, $X=\{x_1,x_2,\ldots\}$ has an upper bound. By the completeness
+Thus, $X=\{x_0,x_1,x_2,\ldots\}$ has an upper bound. By the completeness
 of $\mathbb R$, $X$ must have a least upper bound $z\in\mathbb R$.
 Since $z$ is the least upper bound for $X$, $z-r$ is not an upper bound
 for $X$, so there is some $i$ such that $x_i>z-r$.
 By assumption, $x_{i+1}>x_i+r$, so $x_{i+1}>z$, contradicting the choice
 of $z$.
 \end{proof}
+
+Lemma \ref{specializedarchimedeanlemma} follows from
+Lemma \ref{generalizedarchimedeanlemma} by letting $x_i=ir$.
 
 Note that the above property is automatically inherited by subsystems
 of the reals, such as the rational numbers $\mathbb Q$, the natural
