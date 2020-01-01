@@ -15,7 +15,7 @@
 
 \begin{document}
 
-\title{Archimedean measures considered poor on non-Archimedean structures}
+\title{Archimedean measurements considered poor for non-Archimedean structures}
 
 \author{Samuel A.~Alexander\thanks{Email:
 samuelallenalexander@gmail.com}\hphantom{*}\footnote{2010 Mathematics 
@@ -30,5 +30,25 @@ Subject Classification: FillThisIn
 \end{abstract}
 
 \section{Introduction}
+
+
+\begin{lemma}
+(The Archimedean Property of the Real Numbers)
+If $x_1,x_2,\ldots$ is an infinite sequence of real numbers,
+where each $x_{i+1}$ is significantly larger than $x_i$---by which
+we mean that $x_{i+1}\geq x_i+1$---then, for every real number $y$,
+there exists some $i$ such that $x_i>y$.
+\end{lemma}
+
+\begin{proof}
+If not, then there is some $y$ such that $y\geq x_i$ for all $i$.
+Thus, $X=\{x_1,x_2,\ldots\}$ has an upper bound. By the completeness
+of $\mathbb R$, $X$ must have a least upper bound $z\in\mathbb R$.
+Since $z$ is the least upper bound for $X$, $z-1$ is not an upper bound
+for $X$, so there is some $i$ such that $x_i>z-1$.
+By assumption, $x_{i+1}>x_i+1$, so $x_{i+1}>z$, contradicting the choice
+of $z$.
+\end{proof}
+
 
 \end{document}
