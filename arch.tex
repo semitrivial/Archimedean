@@ -31,12 +31,36 @@ Subject Classification: FillThisIn
 
 \section{Introduction}
 
+Whenever we measure anything using a particular number system, the
+corresponding measurements will be constrained by the structure of that
+number system. If the number system has a different structure than
+the things we are measuring with it, then our
+measurements will suffer accordingly, just as if we were trying to
+force square pegs into round holes.
+
+For example, the natural numbers make lousy candidates for measuring
+distances within a physics laboratory. Distances in the lab have
+properties such as, for example, the fact that for any two distinct
+distances, there is an intermediate distance strictly between them.
+The natural numbers lack this property. Imagine the poor physicist,
+brought up in a world of only natural numbers, scratching his or her
+head upon encountering a rod with length strictly between two rods
+of length $1$ and $2$.
+
+It's tempting to think of the real numbers $\mathbb R$---i.e., the unique
+complete ordered field---as a generic number system with whatever
+structure suits our needs. But it's important to remember that the
+real numbers do have a very specific structure. That structure is
+flexible enough to accomodate many needs, but we shouldn't just
+take that for granted. One particular property of the real numbers
+is the following.
 
 \begin{lemma}
+\label{archimedeanlemma}
 (The Archimedean Property of the Real Numbers)
 If $x_1,x_2,\ldots$ is an infinite sequence of real numbers,
 where each $x_{i+1}$ is significantly larger than $x_i$---by which
-we mean that $x_{i+1}\geq x_i+1$---then, for every real number $y$,
+we mean that each $x_{i+1}\geq x_i+1$---then, for every real number $y$,
 there exists some $i$ such that $x_i>y$.
 \end{lemma}
 
@@ -49,6 +73,28 @@ for $X$, so there is some $i$ such that $x_i>z-1$.
 By assumption, $x_{i+1}>x_i+1$, so $x_{i+1}>z$, contradicting the choice
 of $z$.
 \end{proof}
+
+Note that the above property is automatically inherited by subsystems
+of the reals, such as the rational numbers $\mathbb Q$, the natural
+numbers $\mathbb N$, the integers $\mathbb Z$, or the algebraic numbers.
+All inherit the Archimedean property in the obvious way.
+
+Suppose we have some fuzzy widgets, and we observe that certain
+widgets are fuzzier than others. Naturally, we are inclined to
+quantify the fuzziness of the widgets, assigning them numerical
+fuzziness measures from some number system. Nine times out of ten,
+we choose to use the real numbers, or a subsystem of the real numbers,
+often without a second thought. But suppose
+among these widgets, there happen to be widgets $w_1,w_2,\ldots$
+such that each $w_{i+1}$ is significantly fuzzier than $w_i$,
+and another widget $w_\infty$ which is fuzzier than all the $w_i$'s.
+Suddenly, our decision to use real numbers puts us in a bind.
+It is impossible to assign real number fuzziness measures to our
+widgets in such a way that fuzzier widgets get larger real number
+fuzziness measures and such that significantly fuzzier widgets get
+significantly larger real number fuziness measures. That would
+contradiction Lemma \ref{archimedeanlemma}.
+
 
 
 \end{document}
