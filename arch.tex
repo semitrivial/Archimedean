@@ -145,23 +145,23 @@ we introduce the following formalism, adapting from Lemma \ref{generalizedarchim
 
 \begin{definition}
     A \emph{significantly ordered structure} is a set $X$ along with
-    two orderings $<$ and $\vartriangleleft$.
+    two orderings $<$ and $\ll$.
     For $x,y\in X$, we say $y$ is \emph{greater} than $x$ if $x<y$, and
-    we say $y$ is \emph{significantly greater} than $x$ if $x\vartriangleleft y$.
+    we say $y$ is \emph{significantly greater} than $x$ if $x\ll y$.
     A significantly ordered structure is said to be \emph{Archimedean} if it
     has the following property: for every $X$-sequence
-    $x_0\vartriangleleft x_1\vartriangleleft x_2 \vartriangleleft \cdots$,
+    $x_0\ll x_1\ll x_2 \ll \cdots$,
     for every $x_\infty\in X$, there is some $i$ such that $x_\infty<x_i$.
 \end{definition}
 
 The prototypical example of an Archimedean significantly ordered structure is the real
 numbers with the usual ordering $<$ and the significantly-less-than
-ordering defined such that $x\vartriangleleft y$ if $y\geq x+1$.
+ordering defined such that $x\ll y$ if $y\geq x+1$.
 Before giving some examples of significantly ordered structures that are non-Archimedean,
 we will first develop some more formalism.
 
 \begin{definition}
-    Suppose $(X,<_X,\vartriangleleft_X)$ and $(Y,<_Y,\vartriangleleft_Y)$
+    Suppose $(X,<_X,\ll_X)$ and $(Y,<_Y,\ll_Y)$
     are two significantly ordered structures.
     A function $f:X\to Y$ is \emph{order-preserving} if it satisfies the following
     requirements:
@@ -169,8 +169,8 @@ we will first develop some more formalism.
         \item
             For all $x_1,x_2\in X$, $x_1<_X x_2$ if and only if $f(x_1)<_Yf(x_2)$.
         \item
-            For all $x_1,x_2\in X$, $x_1\vartriangleleft_X x_2$ if and only if
-            $f(x_1)\vartriangleleft_Yf(x_2)$.
+            For all $x_1,x_2\in X$, $x_1\ll_X x_2$ if and only if
+            $f(x_1)\ll_Yf(x_2)$.
     \end{enumerate}
 \end{definition}
 
@@ -180,7 +180,7 @@ want to measure, and think of $Y$ as a number system we want to use to
 perform said measurement).
 
 \begin{proposition}
-    Suppose $(X,<_X,\vartriangleleft_X)$ and $(Y,<_Y,\vartriangleleft_Y)$
+    Suppose $(X,<_X,\ll_X)$ and $(Y,<_Y,\ll_Y)$
     are significantly ordered structures.
     If $Y$ is Archimedean and $X$ is non-Archimedean, then there cannot exist
     an order-preserving function $f:X\to Y$.
@@ -190,10 +190,10 @@ perform said measurement).
     Assume, for sake of a contradiction, that there is some order-preserving
     $f:X\to Y$.
     Since $X$ is non-Archimedean, there is some $X$-sequence
-    $x_0\vartriangleleft_X x_1\vartriangleleft_X \cdots$ and some
+    $x_0\ll_X x_1\ll_X \cdots$ and some
     $x_\infty\in X$ such that there is no $i$ such that $x_\infty<_X x_i$.
     Since $f$ is order-preserving,
-    $f(x_0)\vartriangleleft_Y f(x_1) \vartriangleleft_Y \cdots$.
+    $f(x_0)\ll_Y f(x_1) \ll_Y \cdots$.
     Since $Y$ is Archimedean, there must be some $i$ such that
     $f(x_\infty)<_Y f(x_i)$.
     Since $f$ is order-preserving, $x_\infty<_X x_i$, a contradiction.
