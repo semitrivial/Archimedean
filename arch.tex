@@ -216,7 +216,7 @@ length $1.5$.
 (Examples of non-Archimedean structures)
     \begin{itemize}
         \item
-        (Probabilities)
+        (Probability)
         The measurable subsets of $\mathbb R$ are non-Archimedean
         if we define $\ll$ such that for all measurable subsets
         $X,Y$ of $\mathbb R$, $X\ll Y$ if and only if
@@ -230,6 +230,31 @@ length $1.5$.
         or that an infinite event can have probability $0$.
         See \cite{benci2013non} for an alternative non-Archimedean approach
         to probability.
+        \item
+        (Logical theories)
+        It is not difficult to come up with (for example) true
+        theories $T_0,T_1,\ldots$ (in the language of arithmetic) such that
+        each $T_{i+1}$ proves the consistency of $T_i$, and an additional
+        true theory $T_\infty$ (in the language of arithmetic)
+        which proves the consistency of $\cup_{i=0}^\infty T_i$.
+        In a sense, then, each $T_{i+1}$ is significantly stronger than $T_i$
+        (see G\"odel's incompleteness theorems), and $T_\infty$ is
+        significantly stronger than each $T_i$. In this sense, logical theories
+        are non-Archimedean. In the field
+        of \emph{proof theory} \cite{pohlers2008proof},
+        logicians measure the logical strength of theories not using real numbers
+        but using computable ordinal numbers, a non-Archimedean number system
+        (we will discuss computable ordinals below).
+        \item
+        (Sets)
+        Say that set $U$ is significantly larger than set $V$ if there is an injective
+        function from $V$ into $U$ but there is no bijective function from $V$
+        onto $U$. It is easy to show there are sets $U_0,U_1,\ldots$, with each
+        $U_{i+1}$ significantly larger than $U_i$, and $U_\infty=\cup_{i=0}^\infty U_i$
+        is a set which is significantly larger than all of them. Thus, sets are
+        non-Archimedean. In the field of \emph{set theory}, logicians measure
+        the size of sets using Georg Cantor's famous non-Archimedean number system,
+        the cardinal numbers.
     \end{itemize}
 \end{example}
 
