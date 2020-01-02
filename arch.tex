@@ -265,6 +265,27 @@ length $1.5$.
 
 \section{First Example: Reinforcement learning rewards}
 
+In Reinforcement Learning (RL), an agent interacts with an environment,
+taking actions from a fixed set of possible actions. With every action the
+agent takes, the environment responds with a new observation and with a
+reward. In traditional RL, these rewards are real numbers (many
+authors further constrain them to be rational numbers).
+
+By restricting rewards to be real (or rational) numbers, we unconsciously
+constrain RL to only be applicable toward tasks of an inherently Archimedean
+nature. For example, Wirth et al point out \cite{wirth2017survey} that
+in tasks related to cancer treatment \cite{zhao2009reinforcement},
+``the death of a patient should be avoided at any cost. However, an
+infinitely negative reward breaks classic reinforcement learning algorithms
+and arbitrary, finite values have to be selected.'' This problem could be
+avoided if instead of real numbers, rewards were drawn from a suitable
+non-Archimedean number system containing negative infinites,
+for example, from the so-called
+surreal numbers (which we will discuss further on). Doing so would, however,
+be a departure from traditional RL.
+
+
+
 \section{Second Example: Unsupervised learning}
 
 \section{Third Example: Supervised learning}
