@@ -317,9 +317,14 @@ To give an intuitive example, assume that musical beauty is non-Archimedean,
 as in Example \ref{speculativeexamples}. We can imagine environments where the
 RL agent is tasked with composing songs. For example, the possible actions the
 agent is allowed to make might include one action for each piano key, plus
-an additional ``stand and bow'' action to signal that a song is finished.
+an additional ``stand and bow'' action to signal that a song is
+finished.
 Whenever the agent stands and bows, the agent is awarded with applause based on
-the beauty of the song the agent composed. Assuming musical beauty is
+the beauty of the song the agent
+composed\footnote{To quote Wang and Hammer: ``Decision makings often do not happen
+at the level of basic operations, but at the level of composed actions, where
+there are usually infinite possibilities.'' \cite{wang2015assumptions}}. Assuming
+musical beauty is
 non-Archimedean, such an environment falls outside the possibility of traditional
 RL. By Lemma \ref{maindilemma}, there is no way to assign real number
 rewards to songs without misleading the agent. If $S_0,S_1,S_2,\ldots$ are songs
