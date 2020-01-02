@@ -263,6 +263,34 @@ length $1.5$.
     \end{itemize}
 \end{example}
 
+\begin{example}
+\label{speculativeexamples}
+    (Speculative examples of potentially non-Archimedean structures)
+    Certain structures might plausibly be non-Archimedean, but it is a difficult
+    question to say whether they truly are or not. The reader could come up with
+    such examples in great abundance; we will give three examples.
+    \begin{itemize}
+        \item
+        (Musical beauty)
+        It is plausible that music might be non-Archimedean, in the following
+        sense: there might be songs $S_0,S_1,\ldots$ such that each $S_{i+1}$
+        is significantly beautiful than $S_i$, and another song
+        $S_\infty$ which is significantly more beautiful than all the $S_i$'s.
+        \item
+        (Literature)
+        It is plausible that there might be stories $S_0,S_1,\ldots$ such that
+        each $S_{i+1}$ is significantly more entertaining than $S_i$, and
+        another story $S_{i+1}$ which is significantly more entertaining than
+        all the $S_i$'s.
+        \item
+        (Video game difficulty)
+        It is plausible that there might be video games $V_0,V_1,\ldots$ such that
+        each $V_{i+1}$ is significantly more difficult than $V_i$, and another
+        video game $V_\infty$ which is significantly more difficult than
+        all the $V_i$'s.
+    \end{itemize}
+\end{example}
+
 \section{First Example: Reinforcement learning rewards}
 
 In Reinforcement Learning (RL), an agent interacts with an environment,
@@ -284,7 +312,21 @@ for example, from the so-called
 surreal numbers (which we will discuss further on). Doing so would, however,
 be a departure from traditional RL.
 
-
+To give an intuitive example, assume that musical beauty is non-Archimedean,
+as in Example \ref{speculativeexamples}. We can imagine environments where the
+RL agent is tasked with composing songs. For example, the possible actions the
+agent is allowed to make might include one action for each key on a piano, and
+an additional ``stand and bow'' action for signalling that a song is finished.
+Whenever the agent stands and bows, the agent is awarded with applause based on
+the beauty of the song the agent composed. Assuming musical beauty is
+non-Archimedean, such an environment falls outside the possibility of traditional
+RL. By Lemma \ref{maindilemma}, there is no way to assign real number
+rewards to songs without misleading the agent. If $S_0,S_1,S_2,\ldots$ are songs
+where each $S_{i+1}$ is significantly more beautiful than $S_i$, and $S_\infty$
+is a song significantly more beautiful than all the $S_i$'s, then there is no way to
+assign real-valued rewards to these songs such that each $S_{i+1}$ gets
+significantly more reward than $S_i$ and such that $S_\infty$ gets significantly
+more reward than all the $S_i$'s.
 
 \section{Second Example: Unsupervised learning}
 
