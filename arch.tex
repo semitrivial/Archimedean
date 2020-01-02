@@ -213,6 +213,7 @@ brought up in a world of only natural numbers, confronted by a rod of
 length $1.5$.
 
 \begin{example}
+\label{nonexamples}
 (Examples of non-Archimedean structures)
     \begin{itemize}
         \item
@@ -315,8 +316,8 @@ be a departure from traditional RL.
 To give an intuitive example, assume that musical beauty is non-Archimedean,
 as in Example \ref{speculativeexamples}. We can imagine environments where the
 RL agent is tasked with composing songs. For example, the possible actions the
-agent is allowed to make might include one action for each key on a piano, and
-an additional ``stand and bow'' action for signalling that a song is finished.
+agent is allowed to make might include one action for each piano key, plus
+an additional ``stand and bow'' action to signal that a song is finished.
 Whenever the agent stands and bows, the agent is awarded with applause based on
 the beauty of the song the agent composed. Assuming musical beauty is
 non-Archimedean, such an environment falls outside the possibility of traditional
@@ -327,6 +328,37 @@ is a song significantly more beautiful than all the $S_i$'s, then there is no wa
 assign real-valued rewards to these songs such that each $S_{i+1}$ gets
 significantly more reward than $S_i$ and such that $S_\infty$ gets significantly
 more reward than all the $S_i$'s.
+
+Or, to re-use the cancer example, assume there are certain bad procedures the
+robotic surgeon could take, each one significantly worse than the previous,
+but all still significantly better than killing the patient. There is no way
+to assign real-valued rewards to these actions, and to killing the patient,
+in such a way that each bad action gets punished significantly harsher than
+the previous, but still significantly more forgiving than the punishment for
+killing the patient.
+
+The reader might object by challenging the above assumptions (non-Archimedeanness
+of music and of medical procedures). But we only used those to make the examples
+more intuitive. If the reader insists, we can resort to mathematical tasks.
+For example, imagine that instead of playing piano, the agent is tasked with
+typing up mathematical theories, and when the agent stands and bows, the agent
+is rewarded with applause based on the proof-theoretical strength of the theory
+(or hit with tomatoes if the theory is inconsistent).
+In Example \ref{nonexamples} we noted that proof-theoretical strength of theories
+is non-Archimedean. There exist theories $T_0,T_1,\ldots$, each significantly
+proof-theoretically stronger than the previous, and another theory $T_\infty$,
+significantly proof-theoretically stronger than all the $T_i$'s. We cannot
+possibly assign real-valued rewards to these theories without misleading the
+agent.
+
+The reader might object to the above example because judging the proof-theoretical
+strength of a theory is inherently non-computable anyway. The example could be
+modified so that instead of typing up mathematical theories, the agent has to
+type up mathematical subtheories in (say) the language of Peano arithmetic,
+accompanied by consistency proofs in (say) ZFC. It can be shown that the
+proof-theoretical strength of mathematical theories is still non-Archimedean,
+even when restricted to subtheories of arithmetic whose consistency can be
+proven in ZFC.
 
 \section{Second Example: Unsupervised learning}
 
