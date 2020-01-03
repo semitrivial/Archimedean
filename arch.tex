@@ -418,6 +418,28 @@ thus, at least potentially capable of leading to AGI.
 
 \subsection{Preference-based reinforcement learning}
 
+A lot of exciting research has been done on non-traditional variations
+of RL where, instead of giving the agent numerical rewards for taking actions,
+one instead informs the agent about the relative preference of various
+actions or action-sequences. See \cite{wirth2017survey} for a survey.
+This very nicely side-steps the problems from this paper.
+
+% A problem still does remain, as illustrated by the cancer example (ibid).
+% In traditional RL, although we would want to assign $-\infty$ reward to
+% actions which kill the patient, the traditional RL number system forbids
+% doing so (only real numbers may be rewards). Thus, one has to choose some
+% arbitrary large finite negative number as the reward for killing the patient.
+% This is egregious because, by the Archimedean property of the reals,
+% it is possible that a long sequence of minor harmful actions could end up
+% having a total negative reward even more negative than killing the patient.
+% Preference-based machine learning solves the problem by allowing us to
+% engineer preferences such that killing the patient will \emph{always} be
+% considered relatively worse than any non-lethal action-sequence.
+% But there remains the problem that this still does not convey the full
+% gravity of the situation to the agent: at any particular time, the agent
+% will know that patient-killing is worse than any non-lethal action-sequence
+% observed so far, 
+
 \subsection{Reinforcement learning with other number systems}
 
 The most obvious way to modify RL to avoid the problems presented in this
