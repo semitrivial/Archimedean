@@ -400,13 +400,74 @@ considering extremely
 bizarre C++ templates that would never arise naturally in a software
 studio. This does not invalidate the proof that C++ templates are Turing complete.
 Reinforcement Learning is very useful for many practical tasks, but at least in
-its traditional flavor, it is too constrained to be brought to bear on certain
+its traditional flavor, it is too constrained (by its arbitrary choice of number
+system for its rewards) to apply to certain
 non-Archimedean tasks\footnote{Perhaps explaining why
 ``despite almost two decades of RL research, there has been little solid
 evidence of RL systems that may one day lead to [AGI]''
 \cite{livingston}.}, which, however contrived they are, could certainly be
 attempted by an AGI. Reinforcement learning will not lead to AGI.
 
+\section{Non-traditional reinforcement learning}
+
+We have argued that traditional RL cannot lead to AGI, because
+an AGI is capable of attempting non-Archimedean tasks whose rewards are
+too rich to be expressed using real numbers. There are at least two
+potential ways to change RL so as to make it applicable to such tasks and,
+thus, at least potentially capable of leading to AGI.
+
+\subsection{Preference-based reinforcement learning}
+
+\subsection{Reinforcement learning with other number systems}
+
+The most obvious way to modify RL to avoid the problems presented in this
+paper is to change which number system is used. As far as this author is aware,
+the choice to use real (or rational) numbers for rewards was not made based
+on any fundamental criteria. The real (or rational) numbers are currently a
+useful pragmatic choice because they are easy to compute with using 21st
+century software and 21st century school curricula, but that's hardly relevant
+in the field of genuine AGI. One might
+say the real numbers were a good choice because they are familiar, but even
+that is arguable: in general, students are not taught what the
+real numbers \emph{actually are},
+unless they major in pure mathematics at the university level. Anyway,
+the familiarity argument is totally irrelevant in the field of AGI.
+
+Various non-Archimedean
+number systems exist, but the choice is simplified because we clearly want
+to choose the most general possible number system (unless we have
+some compelling reason to believe rewards should be more structurally limited
+then necessary, which, in the context of AGI, seems doubtful). All of the
+well-known non-Archimedean extensions of $\mathbb R$ are subsystems of the
+so-called \emph{surreal numbers} \cite{conway} \cite{knuth}. The surreal
+numbers were initially discovered during John Conway's attempts to study
+two-player combinatorial chess games like Go and Chess, so it would not be
+surprising if they turn out to be important in the eventual development of
+AGI.
+
+Calculus on the surreal numbers is still relatively cutting-edge, but work
+in this area in the last
+decade \cite{rubinstein2014surreal} \cite{lipparini2016surreal}
+\cite{costin2015integration}
+does seem to be
+moving in directions which could make gradient-descent methods possible over
+the surreals. Perhaps work in that direction could be accelerated if
+researchers in the field of AGI would lend a hand.
+
+One interesting feature of the surreal numbers is that they are defined as the
+union of a hierarchy $S_\alpha$ of subsystems where $\alpha$ ranges over the
+ordinal numbers. In practice, an AGI might not be capable of comprehending the
+entire class of all surreal numbers, instead only being able to comprehend those
+subsystems $S_\alpha$ such that $\alpha$ is a computable ordinal which has some
+code which the AGI knows is the code of a computable ordinal. At least within the
+constraints of the Church-Turing thesis, no individual AGI can know such codes
+for all computable ordinals, because the set of codes of computable ordinals is
+badly non-computable. Any individual RL environment might have rewards limited
+to $S_\alpha$ for a specific computable ordinal $\alpha$, and an AGI too weak to
+comprehend $\alpha$ would be unable to participate in that environment. We would
+submit this as evidence in favor of our thesis \cite{alexander2019} that a machine's
+intelligence ought to be measured in terms of the computable ordinals which the
+machine comprehends.
 
 \section{Conclusion}
 
