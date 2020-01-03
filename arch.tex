@@ -501,6 +501,21 @@ machine comprehends.
 
 \section{Conclusion}
 
+In traditional reinforcement learning, utility-maximizing agents interact
+with environments, receiving real (or rational) number rewards in response to
+actions, and using those rewards to update their behavior. We have argued that
+the decision to limit rewards to real numbers is inappropriate in the context
+of AGI, because the real numbers have the Archimedean property, which makes it
+impossible to use them to accurately portray the value of actions when a task
+involves inherently non-Archimedean structures. Thus, we argue, traditional
+RL cannot possibly lead to AGI, because a genuine AGI should have no trouble
+at least making attempts to engage in tasks that inherently involve
+non-Archimedean structures. We suggested two possible ways
+to modify traditional reinforcement learning to fix this bug: switch to
+preference-based reinforcement learning, or else generalize reinforcement learning
+to allow rewards from a non-Archimedean number system (such as the surreal numbers).
+
+
 \bibliographystyle{plain}
 \bibliography{arch}
 \end{document}
