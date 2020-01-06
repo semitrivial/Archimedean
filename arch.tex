@@ -81,8 +81,8 @@ to other structures.
 \label{generalizedarchimedeanlemma}
 (The Generalized Archimedean Property)
 Let $r>0$ be any positive real number.
-For any $p,q\in\mathbb R$, say that $p$ is \emph{significantly larger}
-than $q$ if $p\geq q+r$.
+For any $x,y\in\mathbb R$, say that $y$ is \emph{significantly larger}
+than $x$ if $y\geq x+r$.
 If $x_0,x_1,x_2,\ldots$ is any infinite sequence of real numbers,
 where each $x_{i+1}$ is significantly larger than $x_i$, then for every real number $y$,
 there exists some $i$ such that $x_i$ is significantly larger than $y$.
@@ -106,6 +106,16 @@ of the reals, such as the rational numbers $\mathbb Q$, the natural
 numbers $\mathbb N$, the integers $\mathbb Z$, or the algebraic numbers.
 All inherit the Generalized Archimedean Property in obvious ways.
 
+Lemma \ref{generalizedarchimedeanlemma} allows us to adapt the notion
+of Archimedeanness to other things than real numbers, even to things
+for which there is no notion of multiplication by natural numbers
+(Lemma \ref{specializedarchimedeanlemma} would not adapt to such things).
+All we need is a notion of ``significantly greater than''.
+For any set of things, some of which are ``significantly greater than''
+others, we can ask whether or not the property in Lemma
+\ref{generalizedarchimedeanlemma} holds. We will make this formal in
+Section \ref{backgroundsection}.
+
 \begin{example}
 \label{fuzzywidgets}
 (Fuzzy widgets)
@@ -125,13 +135,19 @@ significantly larger real number measures. That would
 contradict Lemma \ref{generalizedarchimedeanlemma}.
 \end{example}
 
+Note that the above example does not require us to have any notion
+of multiplying fuzziness by a natural number $n$ (as we would need to have
+if we wanted to adapt Lemma \ref{specializedarchimedeanlemma}).
+This illustrates the enhanced adaptability of Lemma \ref{generalizedarchimedeanlemma}.
+
 % The premise of this paper is that certain structures are inherently
 % non-Archimedean, and that when deciding how to measure such structures,
 % we should be aware of potential consequences of choosing an
 % Archimedean number system for those measurements.
 
 
-\section{Background and Preliminaries}
+\section{Generalized Archimedean Structures}
+\label{backgroundsection}
 
 The Archimedean property is named after Archimedes of Syracuse.
 A similar property appears as the fifth axiom in his \emph{On the Sphere
@@ -177,56 +193,50 @@ we introduce the following formalism, adapting from Lemma \ref{generalizedarchim
     for every $x_\infty\in X$, there is some $i$ such that $x_\infty\ll x_i$.
 \end{definition}
 
-A prototypical example of an Archimedean significantly-ordered structure is the real
+For any real number $r>0$, a prototypical example of an Archimedean
+significantly-ordered structure is the real
 numbers with the significantly-less-than ordering defined such that
-$x_1\ll x_2$ if $x_2\geq x_1+1$.
-Before giving examples of non-Archimedean significantly-ordered structures,
-we will first develop some more formalism.
+$x\ll y$ if and only if $y\geq x+r$.
 
 \begin{definition}
-    Suppose $(X,\ll_X)$ and $(Y,\ll_Y)$
-    are significantly-ordered structures.
-    A function $f:X\to Y$ is \emph{order-preserving} if it satisfies the following
-    requirement:
+    Suppose $(X,\ll)$ is a significantly-ordered structure.
+    A function $f:X\to\mathbb R$ is said to \emph{respect $\ll$}
+    if there is some real $r>0$ such that the following requirement holds:
     \begin{itemize}
-        \item
-            For all $x_1,x_2\in X$, $x_1\ll_X x_2$ if and only if
-            $f(x_1)\ll_Yf(x_2)$.
+        For all $x,y\in X$, $x\ll y$ if and only if
+        $f(y)\geq f(x)+r$.
     \end{itemize}
 \end{definition}
 
 The following proposition formalizes the dilemma we illustrated in
 Example \ref{fuzzywidgets} (think of $X$ as a set of things we
-want to measure, and think of $Y$ as a number system we want to use to
-perform said measurement).
+want to measure).
 
 \begin{proposition}
 \label{maindilemma}
-(Inadequacy of Archimedean number systems for non-Archimedean structures)
-    Suppose $(X,\ll_X)$ and $(Y,\ll_Y)$
-    are significantly-ordered structures.
-    If $Y$ is Archimedean and $X$ is non-Archimedean, then there cannot exist
-    an order-preserving function $f:X\to Y$.
+(Inadequacy of real-number measurements for non-Archimedean structures)
+    Suppose $(X,\ll)$ is a significantly-ordered structure.
+    If $X$ is non-Archimedean, then no function $f:X\to\mathbb R$
+    respects $\ll$.
 \end{proposition}
 
 \begin{proof}
-    Assume, for sake of a contradiction, that there is some order-preserving
-    $f:X\to Y$.
-    Since $X$ is non-Archimedean, there is some $X$-sequence
-    $x_0\ll_X x_1\ll_X \cdots$ and some
-    $x_\infty\in X$ such that there is no $i$ such that $x_\infty\ll_X x_i$.
-    Since $f$ is order-preserving,
-    $f(x_0)\ll_Y f(x_1) \ll_Y \cdots$.
-    Since $Y$ is Archimedean, there must be some $i$ such that
-    $f(x_\infty)\ll_Y f(x_i)$.
-    Since $f$ is order-preserving, $x_\infty\ll_X x_i$, a contradiction.
+    Assume, for sake of a contradiction, that some $f:X\to\mathbb R$
+    exists which respects $\ll$. Thus there is some real $r>0$ such that
+    for all $x,y\in X$, $x\ll y$ if and only if $f(y)\geq f(x)+r$.
+    Since $X$ is non-Archimedean, there is some sequence
+    $x_0\ll x_1\ll x_2\ll\cdots$ in $X$, and some $x_\infty\in X$
+    such that there is no $i$ such that $x_\infty\ll x_i$.
+    By choice of $r$, each $f(x_{i+1})\geq f(x_i)+r$ and there is no
+    $i$ such that $f(x_i)\geq f(x_\infty)$.
+    This contradicts Lemma \ref{generalizedarchimedeanlemma}.
 \end{proof}
 
 Proposition \ref{maindilemma} tells us that we cannot faithfully measure
-non-Archimedean structures using an Archimedean number system.
+non-Archimedean structures using real numbers.
 Any attempt to do so will necessarily be misleading, because ordering
 relationships among the non-Archimedean structures will fail to be reflected
-by the numerical measurements given to them.
+by the real-number measurements given to them.
 We will inevitably end up like the puzzled physicist
 brought up in a world of only natural numbers, confronted by a rod of
 length $1.5$.
