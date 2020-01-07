@@ -168,6 +168,25 @@ of multiplying fuzziness by a natural number $n$ (as we would need to have
 if we wanted to adapt Lemma \ref{specializedarchimedeanlemma}).
 This illustrates the enhanced adaptability of Lemma \ref{generalizedarchimedeanlemma}.
 
+The structure of this paper is as follows.
+\begin{itemize}
+    \item
+    In Section \ref{backgroundsection} we formally adapt
+    Lemma \ref{generalizedarchimedeanlemma} to obtain a notion of Archimedeanness
+    for non-numerical structures, and demonstrate that non-Archimedean such
+    structures cannot accurately be measured using the real numbers.
+    \item
+    In Section \ref{reinforcementlearningsection} we argue that
+    traditional reinforcement learning will not lead to AGI because
+    its rewards are overly constrained.
+    \item
+    In Section \ref{nontraditionalsection} we discuss non-traditional
+    variations of reinforcement learning that avoid the problem of
+    overly constrained rewards.
+    \item
+    In Section \ref{conclusionsection} we summarize and make concluding remarks.
+\end{itemize}
+
 % The premise of this paper is that certain structures are inherently
 % non-Archimedean, and that when deciding how to measure such structures,
 % we should be aware of potential consequences of choosing an
@@ -202,6 +221,7 @@ $x\ll y$ if and only if $y\geq x+r$.
     A function $f:X\to\mathbb R$ is said to \emph{respect $\ll$}
     if there is some real $r>0$ such that the following requirement holds:
     \begin{itemize}
+        \item
         For all $x,y\in X$, $x\ll y$ if and only if
         $f(y)\geq f(x)+r$.
     \end{itemize}
@@ -349,6 +369,7 @@ length $1.5$.
 \end{example}
 
 \section{Reinforcement learning}
+\label{reinforcementlearningsection}
 
 In reinforcement learning (RL), an agent interacts with an environment,
 taking actions from a fixed set of possible actions. With every action the
@@ -441,6 +462,7 @@ evidence of RL systems that may one day lead to [AGI]''
 attempted by an AGI. Reinforcement learning will not lead to AGI.
 
 \section{Non-traditional reinforcement learning}
+\label{nontraditionalsection}
 
 We have argued that traditional RL cannot lead to AGI, because
 an AGI is capable of attempting non-Archimedean tasks whose rewards are
@@ -534,6 +556,7 @@ a much-needed reconciliation of these two approaches.
 
 
 \section{Conclusion}
+\label{conclusionsection}
 
 In traditional reinforcement learning, utility-maximizing agents interact
 with environments, receiving real (or rational) number rewards in response to
