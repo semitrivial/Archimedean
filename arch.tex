@@ -211,7 +211,7 @@ we introduce the following formalism, adapting from Lemma \ref{generalizedarchim
 
 For any real number $r>0$, a prototypical example of an Archimedean
 significantly-ordered structure is the real
-numbers with the significantly-less-than ordering defined such that
+numbers with $\ll$ defined such that
 $x\ll y$ if and only if $y\geq x+r$.
 
 \begin{definition}
@@ -231,7 +231,7 @@ want to measure).
 
 \begin{proposition}
 \label{maindilemma}
-(Inadequacy of real-number measurements for non-Archimedean structures)
+(Inadequacy of the reals for non-Archimedean structures)
     Suppose $(X,\ll)$ is a significantly-ordered structure.
     If $X$ is non-Archimedean, then no function $f:X\to\mathbb R$
     respects $\ll$.
@@ -241,8 +241,8 @@ want to measure).
     Assume, for sake of a contradiction, that some $f:X\to\mathbb R$
     exists which respects $\ll$. Thus there is some real $r>0$ such that
     for all $x,y\in X$, $x\ll y$ if and only if $f(y)\geq f(x)+r$.
-    Since $X$ is non-Archimedean, there is some sequence
-    $x_0\ll x_1\ll x_2\ll\cdots$ in $X$, and some $x_\infty\in X$
+    Since $X$ is non-Archimedean, there is some $X$-sequence
+    $x_0\ll x_1\ll x_2\ll\cdots$ and some $x_\infty\in X$
     such that there is no $i$ such that $x_\infty\ll x_i$.
     By choice of $r$, each $f(x_{i+1})\geq f(x_i)+r$ and there is no
     $i$ such that $f(x_i)\geq f(x_\infty)$.
@@ -281,12 +281,11 @@ length $1.5$.
         which proves the consistency of $\cup_{i=0}^\infty T_i$.
         In a sense, then, each $T_{i+1}$ is significantly stronger than $T_i$
         (see G\"odel's incompleteness theorems), and $T_\infty$ is
-        significantly stronger than each $T_i$. In this sense, logical theories
+        significantly stronger than all of them. In this sense, logical theories
         are non-Archimedean. In the field
         of \emph{proof theory} \cite{pohlers2008proof},
         logicians measure the logical strength of theories not using real numbers
-        but using computable ordinal numbers, a non-Archimedean number system
-        (we will discuss computable ordinals below).
+        but using computable ordinal numbers, another non-Archimedean number system.
         \item
         (Probability)
         The measurable subsets of $\mathbb R$ are non-Archimedean
@@ -294,7 +293,7 @@ length $1.5$.
         $X,Y$ of $\mathbb R$, $X\ll Y$ if and only if
         $X\subseteq Y$ and $|Y-X|=\infty$.
         Nevertheless, probability theorists routinely
-        measure such sets using the real number system, which is Archimedean.
+        measure such sets using the real number system.
         The inadequacy expressed in Proposition \ref{maindilemma}
         manifests itself in well-known paradoxes such as the fact that
         an event can have probability $0$ and yet still be possible,
@@ -322,7 +321,7 @@ length $1.5$.
         (Literature)
         It is plausible that there might be stories $S_0,S_1,\ldots$ such that
         each $S_{i+1}$ is significantly more entertaining than $S_i$, and
-        another story $S_{i+1}$ which is significantly more entertaining than
+        another story $S_\infty$ which is significantly more entertaining than
         all the $S_i$'s.
         \item
         (Video game difficulty)
@@ -348,7 +347,7 @@ length $1.5$.
         theories. Incidentally, if AGI intelligence is non-Archimedean, then
         Proposition \ref{maindilemma} shows it is
         impossible to measure machine intelligence using real numbers without some
-        of those measurements being misleading\footnote{This solves an open problem
+        of those measurements being misleading\footnote{This would solve an open problem
         implicitly stated by Legg and Hutter \cite{legg} when they said of their
         real-number universal intelligence measure: ``...none of these people have
         been able to communicate why the work [on measuring universal intelligence
@@ -391,7 +390,7 @@ be a departure from traditional RL.
 To give an intuitive example, assume that musical beauty is non-Archimedean,
 as in Example \ref{speculativeexamples}. We can imagine environments where the
 RL agent is tasked with composing songs. For example, the possible actions the
-agent is allowed to make might include one action for each piano key, plus
+agent is allowed to rake might include one action for each piano key, plus
 an additional ``stand and bow'' action to signal that a song is
 finished.
 Whenever the agent stands and bows, the agent is awarded with applause based on
@@ -457,7 +456,7 @@ non-Archimedean tasks\footnote{Perhaps explaining why
 ``despite almost two decades of RL research, there has been little solid
 evidence of RL systems that may one day lead to [AGI]''
 \cite{livingston}.}, which, however contrived they are, could certainly be
-attempted by an AGI. Reinforcement learning will not lead to AGI.
+attempted by an AGI. Traditional reinforcement learning will not lead to AGI.
 
 \section{Non-traditional reinforcement learning}
 \label{nontraditionalsection}
@@ -536,7 +535,7 @@ AGI.
 
 The surreal numbers are defined as the
 union of a hierarchy $S_\alpha$ of subsystems where $\alpha$ ranges over the
-ordinal numbers. In practice, an AGI might not be capable of comprehending the
+ordinal numbers. In practice, any particular AGI might not be capable of comprehending the
 entire class of all surreal numbers, instead only being able to comprehend those
 subsystems $S_\alpha$ such that $\alpha$ is a computable ordinal which has some
 code which the AGI knows is the code of a computable ordinal. At least within the
