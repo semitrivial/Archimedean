@@ -9,6 +9,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{question}[theorem]{Question}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{definition}{Definition}
@@ -252,7 +253,11 @@ want to measure).
 \end{proof}
 
 Proposition \ref{maindilemma} tells us that we cannot faithfully measure
-non-Archimedean structures using real numbers.
+non-Archimedean structures using real numbers\footnote{There is an area of research
+known as \emph{measurement theory}, which, traditionally,
+``takes the real numbers as a pre-given numerical domain'' \cite{niederee1992numbers}.
+Some work has been done to generalize measurement theory away from this assumption.
+We would submit this paper as further motivation in that direction.}.
 Any attempt to do so will necessarily be misleading, because ordering
 relationships among the non-Archimedean structures will fail to be reflected
 by the real-number measurements given to them.
@@ -260,6 +265,8 @@ We will inevitably end up like the puzzled physicist
 brought up in a world of only natural numbers, confronted by a rod of
 length $1.5$.
 
+\begin{remark}
+(Spearman's Law of Diminishing Returns)
 Suppose $(X,\ll)$ is a non-Archimedean significantly-ordered structure
 with elements $x_0,x_1,\ldots$ and $x_\infty$ such that
 $x_0\ll x_1\ll\cdots$ and each $x_i\ll x_\infty$.
@@ -280,7 +287,7 @@ a psychometrical phenomenon called \emph{Spearman's Law of Diminishing Returns}
 \cite{hernandez2019ai}, the empirical
 tendency of cognitive ability tests to be less correlated in
 higher-intelligence populations.
-
+\end{remark}
 
 \begin{example}
 \label{nonexamples}
@@ -388,6 +395,7 @@ higher-intelligence populations.
         time.
     \end{itemize}
 \end{example}
+
 
 \section{Reinforcement learning}
 \label{reinforcementlearningsection}
