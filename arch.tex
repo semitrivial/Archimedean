@@ -319,23 +319,15 @@ higher-intelligence populations.
         logicians measure the logical strength of theories not using real numbers
         but using computable ordinal numbers, another non-Archimedean number system.
         \item
-        (Probability)
-        The measurable subsets of $\mathbb R$ are non-Archimedean
-        if we define $\ll$ such that for all measurable subsets
-        $X,Y$ of $\mathbb R$, $X\ll Y$ if and only if
-        $X\subseteq Y$ and $|Y-X|=\infty$.
-        Nevertheless, probability theorists routinely
-        measure such sets using the real number system.
-        The inadequacy expressed in Proposition \ref{maindilemma}
-        manifests itself in well-known paradoxes such as the fact that
-        an event can have probability $0$ and yet still be possible,
-        or can have probability $1$ and yet not be guaranteed,
-        or that an infinite event can have probability $0$.
-        See \cite{benci2013non} for an alternative non-Archimedean approach
-        to probability.
-        \item
-        (Lexicographic pairs)
-        Fill this in.
+        (Asymptotic runtime complexities)
+        Suppose $A_0,A_1,\ldots$ are algorithms such that each $A_i$ has
+        runtime complexity $\Theta(n^i)$, and suppose $A_\infty$ is an algorithm
+        with runtime complexity $\Theta(2^n)$. Then in a certain sense, each
+        $A_{i+1}$ has significantly higher asymptotic runtime complexity than $A_i$,
+        and $A_\infty$ has significantly higher asymptotic runtime complexity than all
+        the $A_i$'s. In this sense, asymptotic runtime complexity is non-Archimedean.
+        In computer science, these runtime complexities are usually measured using
+        big-$O$, big-$\Theta$, or similar notation systems.
     \end{itemize}
 \end{example}
 
