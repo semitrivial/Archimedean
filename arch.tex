@@ -492,6 +492,39 @@ prove that C++ templates are Turing complete \cite{veldhuizen}, we do so by
 considering extremely
 bizarre C++ templates that would never arise naturally in a software
 studio. This does not invalidate the proof that C++ templates are Turing complete.
+
+Finally, the reader might object that replacing infinite rewards with arbitrary
+large finite rewards is good enough. Who cares (the argument might go) whether
+pushing a button gives the agent infinite pleasure or only a million units of pleasure?
+Either way (the argument goes) the agent is going to learn to prefer that button
+over a button that gives only $.1$ units of pleasure. The following example shows
+that this logic breaks down in non-Markov environments.
+
+\begin{example}
+\label{funnyexample}
+Consider an environment with a red button and a blue button.
+Pushing the red button always grants $+1$ reward.
+As for the blue button, suppose the agent presses the blue button for the
+$i$th time. If $i=2^j$ for some integer $j$, then the agent shall receive an
+infinite amount of reward, but otherwise, the agent shall receive $0$ reward.
+If we approximate the infinite reward with a real-valued reward of, say, $1,000,000$,
+then after a long enough time spent in the environment, an AGI will be misled into
+thinking that it isn't worth the longer and longer wait-times between blue-button
+rewards: eventually, it will take more than $1,000,000$ blue-button-presses to get
+rewarded, and the AGI will consider it more worthwhile to get the guaranteed $+1$
+reward from the red button.
+\end{example}
+
+Our critic could respond to Example \ref{funnyexample}
+by making the approximation dynamic, say, making the
+$2^j$th press of the blue button grant $1000000\cdot 2^j$ reward, but at this point,
+the critic is clearly just hard-coding the correct actions into the reward function,
+something which is only possible in Example \ref{funnyexample} because the example
+is so simple that we can completely understand the environment ourselves. For the
+kinds of non-trivial environments where AGI would actually be useful, such carefully
+engineered reward approximations would quickly become intractible.
+
+
 Reinforcement Learning is very useful for many practical tasks, but at least in
 its traditional flavor, it is too constrained (by its arbitrary choice of number
 system for its rewards) to apply to certain
