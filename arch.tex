@@ -605,6 +605,7 @@ structure, generalizing the notion of ``significantly greater than'' from
 Lemma \ref{generalizedarchimedeanlemma}.
 
 \begin{definition}
+\label{significantorderednessoflaurent}
 Let $r>0$ be any positive real number.
 For any formal Laurent series $A=\sum_{i=-m}^\infty a_ix^i$
 and $B=\sum_{i=-n}^\infty b_ix^i$,
@@ -659,7 +660,23 @@ $x_0\ll' x_1\ll' \cdots$ and every $y\in X$, there is some $i$ such that
 $y\ll x_i$.
 \end{definition}
 
+\begin{lemma}
+For any real $r>0$,
+the formal Laurent series are $2$-Archimedean when considered as a
+significantly-ordered structure as in Definition \ref{significantorderednessoflaurent}.
+\end{lemma}
 
+\begin{proof}
+(To be filled in)
+\end{proof}
+
+Just as we argued that a genuine AGI should be capable of engaging in tasks that
+involve inherently non-Archimedean rewards, by similar reasoning, an AGI should
+be capable of engaging in tasks that involve inherently non-2-Archimedean rewards.
+It is not hard to show that all the structures in Example \ref{nonexamples} are
+non-2-Archimedean. Thus, replacing real number rewards by formal Laurent series
+rewards is not enough to remove the roadblock, but it would at least expand the
+types of rewards which are possible.
 
 
 \subsubsection{Hyperreal numbers}
