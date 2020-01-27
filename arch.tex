@@ -423,6 +423,7 @@ avoided if instead of real numbers, rewards were drawn from a suitable
 non-Archimedean number system containing negative infinities. Doing so would, however,
 be a departure from traditional RL.
 
+\begin{example}
 To give an intuitive example, assume that musical beauty is non-Archimedean,
 as in Example \ref{speculativeexamples}. We can imagine environments where the
 RL agent is tasked with composing songs. For example, the possible actions the
@@ -443,6 +444,7 @@ is a song significantly more beautiful than all the $S_i$'s, then there is no wa
 assign real-valued rewards to these songs such that each $S_{i+1}$ gets
 significantly more reward than $S_i$ and such that $S_\infty$ gets significantly
 more reward than all the $S_i$'s.
+\end{example}
 
 Or, to re-use the cancer example, assume there are certain bad procedures the
 robotic surgeon could take, each one significantly worse than the previous,
@@ -455,7 +457,10 @@ killing the patient.
 The reader might object by challenging the non-Archimedeanness
 of music and of medical procedures. But we only used those to make the examples
 more intuitive. If the reader insists, we can resort to mathematical tasks.
-For example, imagine that instead of playing piano, the agent is tasked with
+
+\begin{example}
+\label{theoryexample}
+Imagine that the agent is tasked with
 typing up mathematical theories, and when the agent stands and bows, the agent
 is rewarded with applause based on the proof-theoretical strength of the theory
 (or hit with tomatoes if the theory is inconsistent).
@@ -465,8 +470,10 @@ proof-theoretically stronger than the previous, and another theory $T_\infty$,
 significantly proof-theoretically stronger than all the $T_i$'s. We cannot
 possibly assign real-valued rewards to these theories without misleading the
 agent.
+\end{example}
 
-The reader might object to the above example because judging the proof-theoretical
+The reader might object to Example \ref{theoryexample} on the grounds that
+judging the proof-theoretical
 strength of a theory is inherently non-computable anyway. The example could be
 modified so that instead of typing up mathematical theories, the agent has to
 type up mathematical subtheories in (say) the language of Peano arithmetic,
@@ -494,6 +501,7 @@ evidence of RL systems that may one day lead to [AGI]''
 \cite{livingston}.}, which, however contrived they are, could certainly be
 attempted by an AGI. Traditional reinforcement learning will not lead to AGI.
 
+
 \section{Non-traditional reinforcement learning}
 \label{nontraditionalsection}
 
@@ -501,7 +509,14 @@ We have argued that traditional RL cannot lead to AGI, because
 an AGI is capable of attempting non-Archimedean tasks whose rewards are
 too rich to be expressed using real numbers. There are at least two
 potential ways to change RL so as to make it applicable to such tasks and,
-thus, at least potentially capable of leading to AGI.
+thus, at least potentially capable of leading to AGI. Of course, there is
+no guarantee that removing the roadblock in this paper will cause RL to
+lead to AGI. There might be other roadblocks besides the inadequate reward
+number system\footnote{For example, many RL authors consider non-deterministic
+environments where rewards and observations include an element of
+randomness. The probabilities involved are, traditionally, assumed to be
+real numbers. Perhaps some recent work \cite{bookmark} on non-Archimedean
+probability could be used to remove that roadblock.}.
 
 \subsection{Preference-based reinforcement learning}
 
