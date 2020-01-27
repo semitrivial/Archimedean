@@ -681,6 +681,31 @@ types of rewards which are possible.
 
 \subsubsection{Hyperreal numbers}
 
+The field of mathematics where abstract calculus is done with infinite and infinitesimal
+quantities is called \emph{nonstandard analysis} \cite{robinson}. The numbers most
+commonly associated with this field are the so-called \emph{hyperreal numbers}.
+
+The hyperreal numbers can be
+introduced axiomatically or by means of a semi-constructive method which depends on
+usage of a certain black box, a device known as a \emph{free ultrafilter}. Logicians
+have proven that free ultrafilters exist but that, unfortunately, it is impossible to
+concretely exhibit one. This severely limits (if not completely ruins) the practical
+usefulness of reinforcement learning with hyperreal rewards.
+
+Nevertheless, the hyperreals
+might be useful for proving abstract structural properties about AGI\footnote{Similar to
+the way we use free ultrafilters in \cite{alexander2019intelligence} to obtain
+comparators of the utility-maximizing ability of traditional deterministic RL agents,
+and prove structural properties about said comparators.
+In fact, in that paper, we essentially independently re-invented the free ultrafilter
+construction of the hyperreals, without realizing it at the time!}.
+It can be shown that the hyperreals are not $2$-Archimedean, and indeed, not
+$\alpha$-Archimedean for any ordinal $\alpha$, where ``$\alpha$-Archimedean'' refers to a
+certain natural generalization of $2$-Archimedeanness. Thus, for the purpose of
+proving abstract theorems about RL agents with generalized rewards, the hyperreals
+would be more appropriate than the formal Laurent series.
+
+
 \subsubsection{Surreal numbers}
 
 All of the
