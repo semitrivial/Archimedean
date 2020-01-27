@@ -709,7 +709,8 @@ would be more appropriate than the formal Laurent series.
 \subsubsection{Surreal numbers}
 
 All of the
-well-known non-Archimedean extensions of $\mathbb R$ are subsystems of the
+well-known non-Archimedean extensions of $\mathbb R$
+(including formal Laurent series and hyperreals) are subsystems of the
 so-called \emph{surreal numbers} \cite{conway} \cite{knuth}. The surreal
 numbers were initially discovered during John Conway's attempts to study
 two-player combinatorial games like Go and Chess, so it would not be
@@ -731,23 +732,62 @@ AGI.
 % work in that direction could be accelerated if
 % researchers in the field of AGI would lend a hand.
 
-The surreal numbers are defined as the
-union of a hierarchy $S_\alpha$ of subsystems where $\alpha$ ranges over the
-ordinal numbers. In practice, any particular AGI might not be capable of comprehending the
-entire class of all surreal numbers, instead only being able to comprehend those
-subsystems $S_\alpha$ such that $\alpha$ is a computable ordinal which has some
-code which the AGI knows is the code of a computable ordinal. At least within the
-constraints of the Church-Turing thesis, no individual AGI can know such codes
-for all computable ordinals, because the set of codes of computable ordinals is
-badly non-computable. Any individual RL environment might have rewards limited
-to $S_\alpha$ for a specific computable ordinal $\alpha$, and an AGI too weak to
-comprehend $\alpha$ would be unable to participate in that
-environment\footnote{This situation is reminiscent of \cite{hibbard2011measuring}.}.
-We would submit this as evidence in favor of our thesis \cite{alexander2019measuring}
-that a machine's intelligence ought to be measured in terms of the computable ordinals
-which the machine comprehends. Anyway, this points at a possible joint path
+Unlike the hyperreals,
+the construction of the surreal numbers does not depend on any
+non-constructive black boxes such as free ultrafilters.
+They are constructed as the union of a hierarchy $S_\alpha$ of subsystems where
+$\alpha$ ranges over the ordinal numbers. Assuming that agents with AGI are
+implemented using computers with no additional power beyond the Church-Turing
+Thesis, then for the purposes of AGI, it would be appropriate to restrict our
+attention to a subset of computable surreal numbers, which is the union of
+a hierarchy $C_\alpha$ where $\alpha$ ranges over the computable ordinal numbers.
+For any particular level $C_\alpha$ in this hierarchy, we can consider the
+sub-universe $E_\alpha$ of surreal-reward RL environments with rewards restricted
+to $C_\alpha$.
+
+Assuming the AGI agents are Turing computable,
+no individual AGI can possibly comprehend codes for all computable ordinals, because
+the set of codes of computable ordinals is badly non-computably-enumerable.
+This is profound, because it seems to suggest that any particular AGI can
+only comprehend RL environments in $E_\alpha$ if that AGI can comprehend $\alpha$.
+In other words, for any particular RL environment $e$ with computable surreal number
+rewards, there must be some minimal computable ordinal $\alpha$ such that $e$ has
+rewards from $E_\alpha$; if an AGI is not intelligent enough to comprehend $\alpha$,
+then it seems like there should be no way for the AGI to comprehend $e$
+either\footnote{This situation is highly reminiscent of \cite{hibbard2011measuring}.}.
+We would submit
+this state of affairs as strong evidence in favor of our thesis
+\cite{alexander2019measuring} that a machine's intelligence ought to be measured
+in terms of the computable ordinals which the machine comprehends.
+
+The above paragraph points at a possible joint path
 toward AGI incorporating both machine learning and symbolic logic, perhaps
 a much-needed reconciliation of these two approaches.
+
+\subsection{Alternate number systems: tentative verdict}
+
+For many simple environments not too far outside of traditional RL,
+formal Laurent series could probably serve as a fairly practical number system.
+But formal Laurent series have limitations which suggest that RL
+with formal Laurent series rewards will not be enough to reach AGI, for the exact
+same reason that RL with real number rewards will not be enough.
+
+Because of their dependence on free ultrafilters, the hyperreal numbers will
+probably never be of practical use as RL rewards, but it could conceivably be
+possible to use them to prove abstract structural results about AGI from a
+bird's-eye view.
+
+The surreal numbers (or a computable subset thereof) seem like the most promising
+candidate for RL rewards that could plausibly lead to AGI. We would certainly
+hesitate to call them ``practical'', though. To work with all but the most trivial
+of surreal numbers, one would need to implement sophisticated machinery for
+dealing with computable ordinals, and that's just to get one's foot in the door.
+
+For proving abstract structural results about AGI, it is unclear
+whether hyperreal number RL rewards or surreal number RL rewards would be more
+useful. It is plausible that certain abstract structural results could be easier
+to prove using hyperreal rewards, and certain results could be easier to
+prove using surreal rewards.
 
 
 \section{Conclusion}
@@ -765,7 +805,7 @@ at least making attempts to engage in tasks that inherently involve
 non-Archimedean structures. We suggested two possible ways
 to modify traditional reinforcement learning to fix this bug: switch to
 preference-based reinforcement learning, or else generalize reinforcement learning
-to allow rewards from a non-Archimedean number system (such as the surreal numbers).
+to allow rewards from a non-Archimedean number system.
 
 \section*{Acknowledgments}
 
