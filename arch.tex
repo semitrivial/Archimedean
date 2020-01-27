@@ -502,6 +502,7 @@ that this logic breaks down in non-Markov environments.
 
 \begin{example}
 \label{funnyexample}
+(Delayed gratification)
 Consider an environment with a red button and a blue button.
 Pushing the red button always grants $+1$ reward.
 As for the blue button, suppose the agent presses the blue button for the
@@ -519,8 +520,8 @@ Our critic could respond to Example \ref{funnyexample}
 by making the approximation dynamic, say, making the
 $2^j$th press of the blue button grant $1000000\cdot 2^j$ reward, but at this point,
 the critic is clearly just hard-coding the correct actions into the reward function,
-something which is only possible in Example \ref{funnyexample} because the example
-is so simple that we can completely understand the environment ourselves. For the
+something which is only possible in Example \ref{funnyexample} because the environment
+is simple enough that we can completely understand it ourselves. For the
 kinds of non-trivial environments where AGI would actually be useful, such carefully
 engineered reward approximations would quickly become intractible.
 
