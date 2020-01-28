@@ -506,9 +506,10 @@ that this logic breaks down in non-Markov environments.
 Consider an environment with a red button and a blue button.
 Pushing the red button always grants $+1$ reward.
 As for the blue button, suppose the agent presses the blue button for the
-$i$th time. If $i=2^j$ for some integer $j$, then the agent shall receive an
-infinite amount of reward, but otherwise, the agent shall receive $0$ reward.
-If we approximate the infinite reward with a real-valued reward of, say, $1,000,000$,
+$i$th time. If $i=2^j$ for some integer $j$, then the agent shall receive a
+reward of $\omega$ (the smallest infinite ordinal), but otherwise, the agent
+shall receive $0$ reward.
+If we approximate $\omega$ reward with a real-valued reward of, say, $1,000,000$,
 then after a long enough time spent in the environment, an AGI will be misled into
 thinking that it isn't worth the longer and longer wait-times between blue-button
 rewards: eventually, it will take more than $1,000,000$ blue-button-presses to get
