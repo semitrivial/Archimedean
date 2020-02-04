@@ -710,7 +710,35 @@ significantly-ordered structure as in Definition \ref{significantorderednessofla
 \end{lemma}
 
 \begin{proof}
-(To be filled in. Define $o(A)$ to be the smallest $i$ such that $a_i$ is nonzero.)
+For every Laurent series $A=\sum_{j=-m}^\infty a_j$, let $o(A)=-m$ (we call this the
+\emph{order} of $A$), and let $LC(A)$ be the $x^{-o(A)}$-coefficient of $A$ (we call
+this the \emph{leading coefficient} of $A$).
+
+Claim 1: Whenever $a\ll' b$, then $b\geq 0$.
+To see this, assume $a\ll' b$, so there are $a=x_0,x_1,\ldots$ such that each
+$x_i\ll x_{i+1}$ and each $x_i\ll b$.
+If any $x_i\geq 0$ then, since $x_i\ll b$, it follows that $b\geq 0$, as desired.
+But suppose every $x_i<0$. But assume all the $x_i<0$.
+If all the $o(x_i)$ were equal, then, since each
+$x_i\ll x_{i+1}$, it would follow that each $LC(x_{i+1})\geq LC(x_i)+r$, so Lemma
+\ref{generalizedarchimedeanlemma} would imply $LC(x_i)>0$ for some $i$, contradicting
+the assumption that $x_i<0$. So there is some minimal $i_1$ such
+that $o(x_{i_1+1})\not=o(x_{i_1})$,
+and since $x_{i_1}$ and $x_{i_1+1}$ are negative, this implies
+$o(x_{i_1+1})<o(x_{i_1})$, and by minimality of $i_1$, $o(x_j)=o(x_0)$ for all
+$j\leq i_1$.
+By identical reasoning applied to the sequence $x_{i_1},x_{i_1+1},\ldots$,
+there is some $i_2>i_1$ such that $o(x_{i_2+1})<o(x_{i_2})$
+and such that $o(x_j)=o(x_{i_1+1})$ for all $i_1+1\leq j\leq i_2$.
+Continuing in this way, there are $i_1<i_2<\cdots$ such that $o(x_i)$ shrinks
+for all $i=i_j$ and $o(x_i)$ stays constant everywhere else. Thus, if $b$ were negative,
+there would be some $i$ such that $o(x_i)<o(b)$, which, since $x_i$ is also negative,
+would imply $x_i>b$, contradicting that $x_i\ll b$. This proves Claim 1.
+
+Claim 2: Whenever $a\ll' b$ and $a\geq 0$, then $o(a)>o(b)$.
+To see this, assume $a\geq 0$ and $a\ll' b$, so there is a sequence
+$a=x_0\ll x_1\ll\cdots$ with each $x_i\ll b$.
+
 \end{proof}
 
 Just as we argued that a genuine AGI should be capable of engaging in tasks that
