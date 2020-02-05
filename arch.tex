@@ -475,7 +475,13 @@ type up mathematical subtheories in (say) the language of Peano arithmetic,
 accompanied by consistency proofs in (say) ZFC. It can be shown that the
 proof-theoretical strength of mathematical theories is still non-Archimedean,
 even when restricted to subtheories of arithmetic whose consistency can be
-proven in ZFC.
+proven in ZFC\footnote{For example, let $T_0$ be the theory of Peano arithmetic,
+and for each $i$, let $T_{i+1}$ be $T_i$ together with $CON(T_i)$, a canonical axiom
+encoding the consistency of $T_i$. Let $T_\infty$ be the theory of Peano arithmetic
+along with $CON(\cup_i T_i)$. ZFC is certainly adequate to prove the consistency of
+each of these theories. In the sense of Example \ref{nonexamples}, each $T_{i+1}$ is
+significantly stronger than $T_i$, and $T_\infty$ is significantly stronger than
+$T_0,T_1,\ldots$.}
 
 The reader might object that the above theories-with-proofs example is contrived.
 But if an AGI has human or superhuman intelligence, then even such contrived
@@ -898,7 +904,7 @@ to allow rewards from a non-Archimedean number system.
 
 \section*{Acknowledgments}
 
-We gratefully acknowledge Brendon Miller-Boldt, Mikhail Katz,
+We gratefully acknowledge Brendon Miller-Boldt, Bryan Dawson, Mikhail Katz,
 and Stewart Shapiro for comments and feedback.
 
 \bibliographystyle{plain}
