@@ -110,11 +110,11 @@ more adaptable to other structures.
 \label{generalizedarchimedeanlemma}
 (The Generalized Archimedean Property)
 Let $r>0$ be any positive real number.
-For any $x,y\in\mathbb R$, say that $y$ is \emph{significantly greater}
-than $x$ if $y\geq x+r$.
+For any $x,y\in\mathbb R$, say that $x$ is \emph{significantly less}
+than $y$ if $x\leq y-r$.
 If $x_0,x_1,x_2,\ldots$ is any infinite sequence of real numbers,
-where each $x_{i+1}$ is significantly greater than $x_i$, then for every real number $y$,
-there exists some $i$ such that $x_i$ is significantly greater than $y$.
+where each $x_i$ is significantly less than $x_{i+1}$, then for every real number $y$,
+there exists some $i$ such that $y$ is significantly less than $x_i$.
 \end{lemma}
 
 \begin{proof}
@@ -123,7 +123,7 @@ Thus, $X=\{x_0,x_1,x_2,\ldots\}$ has an upper bound. By the completeness
 of $\mathbb R$, $X$ must have a least upper bound $z\in\mathbb R$.
 Since $z$ is the least upper bound for $X$, $z-r$ is not an upper bound
 for $X$, so there is some $i$ such that $x_i>z-r$.
-By assumption, $x_{i+1}>x_i+r$, so $x_{i+1}>z$, contradicting the choice
+By assumption, $x_i\leq x_{i+1}-r$, so $x_{i+1}>z$, contradicting the choice
 of $z$.
 \end{proof}
 
