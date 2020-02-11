@@ -755,9 +755,9 @@ Case 1: All the $o(x_i)$ are equal. Then each $LC(x_{i+1})\geq LC(x_i)+r$, so by
 Since $x_i\ll b$, this implies $o(x_i)>o(b)$. Thus $o(a)=o(x_0)=o(x_i)>o(b)$, as desired.
 
 Case 2: There is some minimal $i$ such that $o(x_{i+1})\not=o(x_{i})$.
-Since $a\geq 0$, it follows that all the $x_i,x_{i+1}\geq 0$, and since
+Since $a\geq 0$ and $a=x_0$, it follows that $x_i\geq 0$ and $x_{i+1}\geq 0$. Since
 $x_{i+1}>x_{i}$, this implies $o(x_{i+1})<o(x_{i})$.
-Since $x_{i+1}\ll' b$, this implies $o(b)\geq o(x_{i+1})>o(x_i)$.
+Since $x_{i+1}\ll b$, this implies $o(b)\geq o(x_{i+1})>o(x_i)$.
 By minimality of $i$, $o(x_i)=o(x_0)=o(a)$, so $o(a)>o(b)$, as desired. This proves Claim 2.
 
 Finally we prove the lemma. Suppose $x_0\ll' x_1\ll' \cdots$, and let
