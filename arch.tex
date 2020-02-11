@@ -731,7 +731,7 @@ $x_i\ll x_{i+1}$ and each $x_i\ll b$.
 If any $x_i\geq 0$ then, since $x_i\ll b$, it follows that $b\geq 0$, as desired.
 But suppose every $x_i<0$.
 If all the $o(x_i)$ were equal, then, since each
-$x_i\ll x_{i+1}$, it would follow that each $LC(x_{i+1})\geq LC(x_i)+r$, so Lemma
+$x_i\ll x_{i+1}$, it would follow that each $LC(x_{i})\leq LC(x_{i+1})-r$, so Lemma
 \ref{generalizedarchimedeanlemma} would imply $LC(x_i)>0$ for some $i$, contradicting
 the assumption that $x_i<0$. So there is some minimal $i_1$ such
 that $o(x_{i_1+1})\not=o(x_{i_1})$,
@@ -739,7 +739,7 @@ and since $x_{i_1}$ and $x_{i_1+1}$ are negative, this implies
 $o(x_{i_1+1})<o(x_{i_1})$, and by minimality of $i_1$, $o(x_j)=o(x_0)$ for all
 $j\leq i_1$.
 By identical reasoning applied to the sequence $x_{i_1},x_{i_1+1},\ldots$,
-there is some $i_2>i_1$ such that $o(x_{i_2+1})<o(x_{i_2})$
+there is some minimal $i_2>i_1$ such that $o(x_{i_2+1})<o(x_{i_2})$
 and such that $o(x_j)=o(x_{i_1+1})$ for all $i_1+1\leq j\leq i_2$.
 Continuing in this way, there are $i_1<i_2<\cdots$ such that $o(x_i)$ shrinks
 for all $i=i_j$ and $o(x_i)$ stays constant everywhere else. Thus, if $b$ were negative,
