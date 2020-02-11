@@ -155,12 +155,13 @@ fuzziness measures from some number system. Nine times out of ten,
 we choose to use the real numbers, or a subsystem thereof,
 often without a second thought. But suppose
 among these widgets, there happen to be widgets $w_1,w_2,\ldots$
-such that each $w_{i+1}$ is significantly fuzzier than $w_i$,
-and another widget $w_\infty$ which is significantly fuzzier than all the $w_i$'s.
+such that each $w_{i}$ is significantly less fuzzy than $w_{i+1}$,
+and another widget $w_\infty$ such that all the $w_i$'s are
+significantly less fuzzy than $w_\infty$.
 Suddenly, our decision to use real numbers puts us in a bind.
 It is impossible to assign real number fuzziness measures to our
-widgets in such a way that significantly fuzzier widgets get
-significantly greater real number measures. That would
+widgets in such a way that significantly less fuzzy widgets get
+significantly smaller real number measures. That would
 contradict Lemma \ref{generalizedarchimedeanlemma}.
 \end{example}
 
@@ -199,8 +200,8 @@ we introduce the following formalism, adapting from Lemma \ref{generalizedarchim
 \begin{definition}
     A \emph{significantly-ordered structure} is a collection $X$ with
     an ordering $\ll$.
-    For $x_1,x_2\in X$, we say $x_2$ is \emph{significantly greater}
-    than $x_1$ if $x_1\ll x_2$.
+    For $x_1,x_2\in X$, we say $x_1$ is \emph{significantly less}
+    than $x_2$ if $x_1\ll x_2$.
     A significantly-ordered structure is \emph{Archimedean} if it
     has the following property: for every $X$-sequence
     $x_0\ll x_1\ll x_2 \ll \cdots$,
@@ -210,7 +211,7 @@ we introduce the following formalism, adapting from Lemma \ref{generalizedarchim
 For any real number $r>0$, a prototypical example of an Archimedean
 significantly-ordered structure is the real
 numbers with $\ll$ defined such that
-$x\ll y$ if and only if $y\geq x+r$.
+$x\ll y$ if and only if $x\leq y-r$.
 
 \begin{definition}
     Suppose $(X,\ll)$ is a significantly-ordered structure.
@@ -219,7 +220,7 @@ $x\ll y$ if and only if $y\geq x+r$.
     \begin{itemize}
         \item
         For all $x,y\in X$, $x\ll y$ if and only if
-        $f(y)\geq f(x)+r$.
+        $f(x)\leq f(y)-r$.
     \end{itemize}
 \end{definition}
 
@@ -238,12 +239,13 @@ want to measure).
 \begin{proof}
     Assume, for sake of a contradiction, that some $f:X\to\mathbb R$
     exists which respects $\ll$. Thus there is some real $r>0$ such that
-    for all $x,y\in X$, $x\ll y$ if and only if $f(y)\geq f(x)+r$.
+    for all $x,y\in X$, $x\ll y$ if and only if $f(x)\leq f(y)-r$.
     Since $X$ is non-Archimedean, there is some $X$-sequence
     $x_0\ll x_1\ll x_2\ll\cdots$ and some $x_\infty\in X$
     such that there is no $i$ such that $x_\infty\ll x_i$.
-    By choice of $r$, each $f(x_{i+1})\geq f(x_i)+r$ and there is no
-    $i$ such that $f(x_i)\geq f(x_\infty)$.
+    By choice of $r$, each $f(x_{i})\leq f(x_{i+1})-r$ and there is no
+    $i$ such that $f(x_\infty)\leq f(x_i)-r$, i.e., there is no
+    $i$ such that $f(x_i)\geq f(x_\infty)+r$.
     This contradicts Lemma \ref{generalizedarchimedeanlemma}.
 \end{proof}
 
