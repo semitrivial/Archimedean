@@ -545,7 +545,7 @@ attempted by an AGI. Traditional reinforcement learning will not lead to AGI.
 
 We have argued that traditional RL cannot lead to AGI, because
 an AGI is capable of attempting non-Archimedean tasks whose rewards are
-too rich to be expressed using real numbers. There are at least two
+too rich to express using real numbers. There are at least two
 potential ways to change RL so as to make it applicable to such tasks and,
 thus, at least potentially capable of leading to AGI. Of course, there is
 no guarantee that removing the roadblock in this paper will cause RL to
@@ -598,7 +598,7 @@ useful pragmatic choice because they are easy to compute with using 21st
 century software and 21st century school curricula, but that's hardly relevant
 in the field of genuine AGI. One might
 say the real numbers were a good choice because they are familiar, but even
-that is arguable: in general, students are not taught what the
+that is arguable: in general, students are usually not taught what the
 real numbers \emph{actually are},
 unless they major in pure mathematics at the university level. Anyway,
 the familiarity argument is totally irrelevant in the field of AGI.
@@ -660,7 +660,7 @@ Lemma \ref{generalizedarchimedeanlemma}.
 Let $r>0$ be any positive real number.
 For any formal Laurent series $A=\sum_{i=-m}^\infty a_ix^i$
 and $B=\sum_{i=-n}^\infty b_ix^i$,
-we say $A\ll_r B$ if $A\not=B$ and $b_i\geq a_i+r$ where $i$ is the smallest
+we say $A\ll_r B$ if $A\not=B$ and $a_i\leq b_i-r$ where $i$ is the smallest
 index such that $a_i\not=b_i$.
 \end{definition}
 
@@ -836,13 +836,13 @@ They are constructed as the union of a hierarchy $S_\alpha$ of subsystems where
 $\alpha$ ranges over the ordinal numbers. Assuming that agents with AGI are
 implemented using computers with no additional power beyond the Church-Turing
 Thesis, then for the purposes of AGI, it would be appropriate to restrict our
-attention to a subset of computable surreal numbers, which is the union of
-a hierarchy $C_\alpha$ where $\alpha$ ranges over the computable ordinal numbers.
-For any particular level $C_\alpha$ in this hierarchy, we can consider the
+attention to some computable subset of the surreal numbers, which would be the union of
+some hierarchy $C_\alpha$ where $\alpha$ ranges over the computable ordinal numbers.
+For any particular level $C_\alpha$ in this hierarchy, we could consider the
 sub-universe $E_\alpha$ of surreal-reward RL environments with rewards restricted
 to $C_\alpha$.
 
-Assuming the AGI agents are Turing computable,
+Assuming AGI agents are Turing computable,
 no individual AGI can possibly comprehend codes for all computable ordinals, because
 the set of codes of computable ordinals is badly non-computably-enumerable.
 This is profound, because it seems to suggest that any particular AGI can
