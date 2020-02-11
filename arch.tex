@@ -293,12 +293,14 @@ high-intelligence populations.
     \begin{itemize}
         \item
         (Sets)
-        Say that set $U$ is significantly greater than set $V$ if there is an injective
-        function from $V$ into $U$ but there is no bijective function from $V$
-        onto $U$. It is easy to show there are sets $U_0,U_1,\ldots$, with each
-        $U_{i+1}$ significantly greater than $U_i$, and $U_\infty=\cup_{i=0}^\infty U_i$
-        is a set which is significantly greater than all of them. Thus, sets are
-        non-Archimedean. In the field of \emph{set theory}, logicians measure
+        Say that set $U$ is significantly smaller than set $V$ if there is an injective
+        function from $U$ into $V$ but there is no bijective function from $U$
+        onto $V$. It is easy to show there are sets $U_0,U_1,\ldots$, with each
+        $U_{i}$ significantly smaller than $U_{i+1}$, and each $U_i$ is
+        significantly smaller than
+        $U_\infty=\cup_{i=0}^\infty U_i$.
+        Thus, sets are
+        non-Archimedean. In the field of \emph{set theory}, mathematicians measure
         the size of sets using Georg Cantor's famous non-Archimedean number system,
         the cardinal numbers.
         \item
@@ -308,21 +310,21 @@ high-intelligence populations.
         each $T_{i+1}$ proves the consistency of $T_i$, and an additional
         true theory $T_\infty$ (in the language of arithmetic)
         which proves the consistency of $\cup_{i=0}^\infty T_i$.
-        In a sense, then, each $T_{i+1}$ is significantly stronger than $T_i$
-        (see G\"odel's incompleteness theorems), and $T_\infty$ is
-        significantly stronger than all of them. In this sense, logical theories
+        In a sense, then, each $T_i$ is significantly weaker than $T_{i+1}$
+        (see G\"odel's incompleteness theorems), and each $T_i$ is
+        significantly weaker than $T_\infty$. In this sense, logical theories
         are non-Archimedean. In the field
-        of \emph{proof theory} \cite{pohlers2008proof},
-        logicians measure the logical strength of theories not using real numbers
-        but using computable ordinal numbers, another non-Archimedean number system.
+        of \emph{proof theory} \cite{pohlers2008proof} \cite{rathjen},
+        logicians measure the logical strength of theories using computable
+        ordinal numbers, another non-Archimedean number system.
         \item
         (Asymptotic runtime complexities)
         Suppose $A_0,A_1,\ldots$ are algorithms such that each $A_i$ has
         runtime complexity $\Theta(n^i)$, and suppose $A_\infty$ is an algorithm
         with runtime complexity $\Theta(2^n)$. Then in a certain sense, each
-        $A_{i+1}$ has significantly higher asymptotic runtime complexity than $A_i$,
-        and $A_\infty$ has significantly higher asymptotic runtime complexity than all
-        the $A_i$'s. In this sense, asymptotic runtime complexity is non-Archimedean.
+        $A_{i}$ has significantly lower asymptotic runtime complexity than $A_{i+1}$,
+        and each $A_i$ has significantly lower asymptotic runtime complexity than
+        $A_\infty$. In this sense, asymptotic runtime complexity is non-Archimedean.
         In computer science, these runtime complexities are usually measured using
         big-$O$, big-$\Theta$, or similar notation systems.
     \end{itemize}
@@ -340,13 +342,13 @@ high-intelligence populations.
         Assuming there is such a thing as objective
         musical beauty (not contingent on features of the human condition, etc.),
         then it is plausible that music might be non-Archimedean, in the following
-        sense: there might be songs $S_0,S_1,\ldots$ such that each $S_{i+1}$
-        is significantly more beautiful than $S_i$, and another song
-        $S_\infty$ which is significantly more beautiful than all the $S_i$'s.
+        sense: there might be songs $S_0,S_1,\ldots$ such that each $S_i$
+        is significantly less beautiful than $S_{i+1}$, and another song
+        $S_\infty$ such that each $S_i$ is significantly less beautiful than $S_\infty$.
         \item
         (Ethical utility)
         Early utilitarian Jeremy Bentham suggested a hedonistic
-        calculus in which (presumably real) pleasure measurements would be assigned to
+        calculus in which pleasure measurements would be assigned to
         actions, to help adjudicate ethical dilemmas.
         His successor, John Stuart Mill, objected that some actions are incomparably
         better than others: ``If one of [two pleasures] is, by those
@@ -355,11 +357,7 @@ high-intelligence populations.
         pleasure which their nature is capable of, we are justified in ascribing to
         the preferred enjoyment a superiority in quality, so far outweighing quantity
         as to render it, in comparison, of small account'' \cite{mill}.
-        If $P_0$ and $P_\infty$ are pleasures such that
-        each $P_{i+1}$ is significantly better than $P_i$ (where $P_i$ is the
-        pleasure of ``experiencing $P_0$ $i$ times'') and such that $P_\infty$
-        is significantly better than every $P_i$,
-        then these utilitarian pleasures are non-Archimedean.
+        This suggests that Bentham's pleasures are non-Archimedean.
         \item
         (AGI)
         It is plausible that there
@@ -370,9 +368,10 @@ high-intelligence populations.
         ``The very day you start, you will go home a better man, and the same thing
         will happen the day after. Every day, day after day, you will get better
         and better.'' \cite{protagoras}} AGIs $A_0,A_1,\ldots$ such that
-        each $A_{i+1}$ is significantly more
-        intelligent than $A_i$, and another AGI $A_\infty$ which is significantly more
-        intelligent than all the $A_i$'s. We first pointed this out in
+        each $A_{i}$ is significantly less
+        intelligent than $A_{i+1}$, and another AGI $A_\infty$ such that each $A_i$
+        is significantly less
+        intelligent than $A_\infty$. We first pointed this out in
         \cite{alexander2019measuring}, where we propose measuring the
         intelligence of mechanical
         knowing agents using computable ordinals, the same non-Archimedean number system
@@ -417,7 +416,7 @@ in tasks related to cancer treatment \cite{zhao2009reinforcement},
 infinitely negative reward breaks classic reinforcement learning algorithms
 and arbitrary, finite values have to be selected.'' This problem could be
 avoided if instead of real numbers, rewards were drawn from a suitable
-non-Archimedean number system containing negative infinities. Doing so would, however,
+non-Archimedean number system containing negative infinities. Doing so would
 be a departure from traditional RL.
 
 \begin{example}
@@ -427,7 +426,7 @@ RL agent is tasked with composing songs. For example, the possible actions the
 agent is allowed to take might include one action for each piano key, plus
 an additional ``stand and bow'' action to signal that a song is
 finished.
-Whenever the agent stands and bows, the agent is awarded with applause based on
+Whenever the agent stands and bows, the agent is rewarded with applause based on
 the beauty of the song the agent
 composed\footnote{To quote Wang and Hammer: ``Decision makings often do not happen
 at the level of basic operations, but at the level of composed actions, where
@@ -436,11 +435,12 @@ musical beauty is
 non-Archimedean, such an environment falls outside the possibility of traditional
 RL. By Lemma \ref{maindilemma}, there is no way to assign real number
 rewards to songs without misleading the agent. If $S_0,S_1,S_2,\ldots$ are songs
-where each $S_{i+1}$ is significantly more beautiful than $S_i$, and $S_\infty$
-is a song significantly more beautiful than all the $S_i$'s, then there is no way to
-assign real-valued rewards to these songs such that each $S_{i+1}$ gets
-significantly more reward than $S_i$ and such that $S_\infty$ gets significantly
-more reward than all the $S_i$'s.
+where each $S_{i}$ is significantly less beautiful than $S_{i+1}$, and
+all the $S_i$ are significantly less beautiful than another song $S_\infty$,
+then there is no way to
+assign real-valued rewards to these songs such that each $S_{i}$ gets
+significantly less reward than $S_{i+1}$ and significantly less reward
+than $S_\infty$.
 \end{example}
 
 Or, to re-use the cancer example, assume there are certain bad procedures the
@@ -463,7 +463,7 @@ is rewarded with applause based on the proof-theoretical strength of the theory
 (or hit with tomatoes if the theory is inconsistent).
 In Example \ref{nonexamples} we noted that proof-theoretical strength of theories
 is non-Archimedean. There exist theories $T_0,T_1,\ldots$, each significantly
-proof-theoretically stronger than the previous, and another theory $T_\infty$,
+proof-theoretically weaker than the next, and another theory $T_\infty$,
 significantly proof-theoretically stronger than all the $T_i$'s. We cannot
 possibly assign real-valued rewards to these theories without misleading the
 agent.
@@ -481,13 +481,13 @@ proven in ZFC\footnote{For example, let $T_0$ be the theory of Peano arithmetic,
 and for each $i$, let $T_{i+1}$ be $T_i$ together with $CON(T_i)$, a canonical axiom
 encoding the consistency of $T_i$. Let $T_\infty$ be the theory of Peano arithmetic
 along with $CON(\cup_i T_i)$. ZFC is certainly adequate to prove the consistency of
-each of these theories. In the sense of Example \ref{nonexamples}, each $T_{i+1}$ is
-significantly stronger than $T_i$, and $T_\infty$ is significantly stronger than
-$T_0,T_1,\ldots$.}
+each of these theories. In the sense of Example \ref{nonexamples}, each $T_{i}$ is
+significantly weaker than $T_i$ and significantly weaker than $T_\infty$.}.
 
 The reader might object that the above theories-with-proofs example is contrived.
-But if an AGI has human or superhuman intelligence, then even such contrived
-tasks should pose no problem for that AGI. When we prove that the Halting Problem
+But an AGI with human or better intelligence should have no problem
+at least comprehending and attempting such a task (regardless of whether or not
+the AGI is able to perform well at it). When we prove that the Halting Problem
 is unsolvable, we do so by considering contrived programs that we could write if
 the Halting Problem were solvable. The contrivedness of those programs does not
 invalidate the proof of the unsolvability of the Halting Problem. Again, when we
@@ -512,7 +512,7 @@ As for the blue button, suppose the agent presses the blue button for the
 $i$th time. If $i=2^j$ for some integer $j$, then the agent shall receive a
 reward of $\omega$ (the smallest infinite ordinal), but otherwise, the agent
 shall receive $0$ reward.
-If we approximate $\omega$ reward with a real-valued reward of, say, $1,000,000$,
+If we approximate $\omega$ with a real-value of, say, $1,000,000$,
 then after a long enough time spent in the environment, an AGI will be misled into
 thinking that it isn't worth the longer and longer wait-times between blue-button
 rewards: eventually, it will take more than $1,000,000$ blue-button-presses to get
