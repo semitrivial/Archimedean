@@ -496,7 +496,7 @@ considering extremely
 bizarre C++ templates that would never arise naturally in a software
 studio. This does not invalidate the proof that C++ templates are Turing complete.
 
-Finally, the reader might object that replacing infinite rewards with arbitrary
+Finally, the reader might object that approximating infinite rewards with arbitrary
 large finite rewards is good enough. Who cares (the argument might go) whether
 pushing a button gives the agent infinite pleasure or only a million units of pleasure?
 Either way (the argument goes) the agent is going to learn to prefer that button
@@ -528,6 +528,29 @@ something which is only possible in Example \ref{funnyexample} because the envir
 is simple enough that we can completely understand it ourselves. For the
 kinds of non-trivial environments where AGI would actually be useful, such carefully
 engineered reward approximations would quickly become intractible.
+
+% To make the argument against approximation more general, suppose $\mathbb R^*$ is
+% some number system strictly extending $\mathbb R$.
+% Let $\mathcal E_{\mathbb R^*}$ be the space of all RL
+% environments with $\mathbb R^*$-valued rewards, and let $\mathcal E_{\mathbb R}$
+% be the space of all traditional RL environments (that is, all RL environments with
+% real-valued rewards). Suppose $f:\mathcal E_{\mathbb R^*}\to \mathcal E_{\mathbb R}$
+% is an approximation function which approximates each non-traditional environment
+% $e\in \mathcal E_{\mathbb R^*}$ by a traditional environment
+% $f(e)\in\mathcal E_{\mathbb R}$. Presumably, there should
+% be no need to further
+% approximate an environment which already has real-valued rewards (just as, when we
+% are approximating reals by rationals, there should be no need to approximate one rational
+% by a different rational), so we should have $f(e)=e$ for all $e\in\mathcal E_{\mathbb R}$.
+% Now, for any strictly non-traditional environment
+% $e^*\in\mathcal E_{\mathbb R^*}\backslash E_{\mathbb R}$, $f(e^*)\in\mathcal E_{\mathbb R}$,
+% so $f(f(e^*))=f(e^*)$. Thus, traditional RL agents who are extended to non-traditional
+% RL agents by means of the approximation $f$, cannot distinguish between the two
+% environments $e^*$ and $f(e^*)$ (because both have the same approximation). And if an
+% agent cannot distinguish between two distinct environments, then that agent can comprehend
+% at most one of those environments. This argument shows that any time a traditional RL
+% agent is applied to non-traditional RL environments by means of approximation, it must
+% necessarily fail to comprehend some environment.
 
 
 Reinforcement Learning is useful for many practical tasks, but at least in
