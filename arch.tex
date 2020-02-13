@@ -61,7 +61,7 @@ complete ordered field---as a generic number system with whatever
 structure suits our needs. But the
 real numbers do have their own specific structure. That structure is
 flexible enough to accomodate many needs, but we shouldn't just
-take that for granted. One particular property of the real numbers
+take that for granted. One particular property constraining the real numbers
 is the following.
 
 \begin{lemma}
@@ -214,7 +214,7 @@ $x\ll y$ if and only if $x\leq y-r$.
 
 \begin{definition}
     Suppose $(X,\ll)$ is a significantly-ordered structure.
-    A function $f:X\to\mathbb R$ is said to \emph{respect $\ll$}
+    A function $f:X\to\mathbb R$ is said to \emph{accurately measure $(X,\ll)$}
     if there is some real $r>0$ such that the following requirement holds:
     \begin{itemize}
         \item
@@ -232,12 +232,12 @@ want to measure).
 (Inadequacy of the reals for non-Archimedean structures)
     Suppose $(X,\ll)$ is a significantly-ordered structure.
     If $X$ is non-Archimedean, then no function $f:X\to\mathbb R$
-    respects $\ll$.
+    accurately measures $(X,\ll)$.
 \end{proposition}
 
 \begin{proof}
     Assume, for sake of a contradiction, that some $f:X\to\mathbb R$
-    exists which respects $\ll$. Thus there is some real $r>0$ such that
+    exists which accurately measures $(X,\ll)$. Thus there is some real $r>0$ such that
     for all $x,y\in X$, $x\ll y$ if and only if $f(x)\leq f(y)-r$.
     Since $X$ is non-Archimedean, there is some $X$-sequence
     $x_0\ll x_1\ll x_2\ll\cdots$ and some $x_\infty\in X$
