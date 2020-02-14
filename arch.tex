@@ -639,25 +639,23 @@ that vocabulary does not seem to have caught on).
 
 \begin{definition}
 A \emph{formal Laurent series} is a formal expression of the following form
-(where $m$ can be any natural number and $a_{-m},a_{-(m-1)},\ldots,a_0,a_1,a_2,\ldots$
+(where $m$ can be any integer and $a_{-m},a_{-(m-1)},\ldots,a_0,a_1,a_2,\ldots$
 are real numbers, $a_{-m}\not=0$):
 \[
 \sum_{i=-m}^\infty a_i x^i.
 \]
-\end{definition}
-
-The advantage of the formal Laurent series number system is that it is
-relatively concrete, compared to the more abstract hyperreal or surreal numbers
-discussed below.
-
-\begin{definition}
-(Comparison of formal Laurent series)
 Suppose $A=\sum_{i=-m}^\infty a_ix^i$
 and $B=\sum_{i=-n}^\infty b_ix^i$ are two distinct formal Laurent series.
 We declare $A<B$ if and only if $a_i<b_i$ where $i$ is the smallest
 index such that $a_i\not=b_i$ (where we consider $a_i$ to be $0$ for all
 $i<-m$ and we consider $b_i$ to be $0$ for all $i<-n$).
 \end{definition}
+
+There are natural ways to do arithmetic on formal Laurent series, but we will
+avoid those details here.
+The advantage of the formal Laurent series number system is that it is
+relatively concrete, compared to the more abstract hyperreal or surreal numbers
+discussed below.
 
 \begin{example}
 (Examples of formal Laurent series comparisons)
