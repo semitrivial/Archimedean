@@ -651,7 +651,20 @@ index such that $a_i\not=b_i$ (where we consider $a_i$ to be $0$ for all
 $i<-m$ and we consider $b_i$ to be $0$ for all $i<-n$).
 \end{definition}
 
-There are natural ways to do arithmetic on formal Laurent series, but we will
+We can consider the real numbers $\mathbb R$ to be embedded in the formal Laurent
+series by way of the embedding $r\mapsto rx^0$. Having done so, the intuition is that,
+for example, $1x^1$ is what we might call a ``first-order infinitesimal number'', smaller
+than every positive real;
+$1x^2$ is what we might call a ``second-order infinitesimal number'', smaller than every
+positive first-order infinitesimal number; and so on. Likewise,
+$1x^{-1}$ is what we might call a ``first-order infinite number'', bigger than
+every real; $1x^{-2}$ is what we might call a ``second-order infinite number'', bigger
+than every first-order infinite number; and so on. Thus, the formal Laurent series are
+quite adequate to address the problem described by
+Wirth et al \cite{wirth2017survey}, in which an infinite negative reward is required when the
+RL agent kills the cancer patient.
+
+There are natural ways to define arithmetic on formal Laurent series, but we will
 avoid those details here.
 The advantage of the formal Laurent series number system is that it is
 relatively concrete, compared to the more abstract hyperreal or surreal numbers
@@ -677,11 +690,25 @@ Lemma \ref{generalizedarchimedeanlemma}.
 
 \begin{definition}
 \label{significantorderednessoflaurent}
+\begin{enumerate}
+\item
+For every Laurent series $A=\sum_{j=-m}^\infty a_j$, let $o(A)=-m$ (we call this the
+\emph{order} of $A$), and let $LC(A)$ be the $x^{-o(A)}$-coefficient of $A$ (we call
+this the \emph{leading coefficient} of $A$).
+\item
 Let $r>0$ be any positive real number.
 For any formal Laurent series $A=\sum_{i=-m}^\infty a_ix^i$
 and $B=\sum_{i=-n}^\infty b_ix^i$,
-we say $A\ll_r B$ if $A\not=B$ and $a_i\leq b_i-r$ where $i$ is the smallest
-index such that $a_i\not=b_i$.
+we say $A\ll_r B$ if one of the following conditions holds:
+    \begin{itemize}
+        \item
+        $o(A)<o(B)$ and $A>0$; or
+        \item
+        $o(A)>o(B)$ and $B<0$; or
+        \item
+        $o(A)=o(B)$ and $LC(A)\leq LC(B)-r$.
+    \end{itemize}
+\end{enumerate}
 \end{definition}
 
 \begin{lemma}
@@ -694,19 +721,6 @@ Let $x_0=0x^1$, $x_1=rx^1$, $x_2=2rx^1$, and in general let
 $x_i=irx^1$. Let $x_\infty=1x^0$. Then each $x_i\ll_r x_{i+1}$,
 and yet each $x_i\ll_r x_\infty$.
 \end{proof}
-
-We can consider the real numbers $\mathbb R$ to be embedded in the formal Laurent
-series by way of the embedding $r\mapsto rx^0$. Having done so, the intuition is that,
-for example, $1x^1$ is what we might call a ``first-order infinitesimal number'', smaller
-than every positive real;
-$1x^2$ is what we might call a ``second-order infinitesimal number'', smaller than every
-positive first-order infinitesimal number; and so on. Likewise,
-$1x^{-1}$ is what we might call a ``first-order infinite number'', bigger than
-every real; $1x^{-2}$ is what we might call a ``second-order infinite number'', bigger
-than every first-order infinite number; and so on. Thus, the formal Laurent series are
-quite adequate to address the problem described by
-Wirth et al \cite{wirth2017survey}, in which an infinite negative reward is required when the
-RL agent kills the cancer patient.
 
 Unfortunately, while the formal Laurent series contain infinities and infinitesimals,
 in a sense we will make formal, they still do not contain ``enough'' infinities and
@@ -732,63 +746,16 @@ $y\ll x_i$.
 \end{definition}
 
 \begin{lemma}
+\label{tedioustheorem}
 For any real $r>0$,
 the formal Laurent series are $2$-Archimedean when considered as a
 significantly-ordered structure as in Definition \ref{significantorderednessoflaurent}.
 \end{lemma}
 
-\begin{proof}
-Let $r>0$. For simplicity, we write $\ll$ for $\ll_r$ and $\ll'$ for
-$\ll'_r$.
-
-For every Laurent series $A=\sum_{j=-m}^\infty a_j$, let $o(A)=-m$ (we call this the
-\emph{order} of $A$), and let $LC(A)$ be the $x^{-o(A)}$-coefficient of $A$ (we call
-this the \emph{leading coefficient} of $A$).
-
-Claim 1: Whenever $a\ll' b$, then $b\geq 0$.
-To see this, assume $a\ll' b$, so there are $a=x_0,x_1,\ldots$ such that each
-$x_i\ll x_{i+1}$ and each $x_i\ll b$.
-If any $x_i\geq 0$ then, since $x_i\ll b$, it follows that $b\geq 0$, as desired.
-But suppose every $x_i<0$.
-If all the $o(x_i)$ were equal, then, since each
-$x_i\ll x_{i+1}$, it would follow that each $LC(x_{i})\leq LC(x_{i+1})-r$, so Lemma
-\ref{generalizedarchimedeanlemma} would imply $LC(x_i)>0$ for some $i$, contradicting
-the assumption that $x_i<0$. So there is some minimal $i_1$ such
-that $o(x_{i_1+1})\not=o(x_{i_1})$,
-and since $x_{i_1}$ and $x_{i_1+1}$ are negative, this implies
-$o(x_{i_1+1})<o(x_{i_1})$, and by minimality of $i_1$, $o(x_j)=o(x_0)$ for all
-$j\leq i_1$.
-By identical reasoning applied to the sequence $x_{i_1},x_{i_1+1},\ldots$,
-there is some minimal $i_2>i_1$ such that $o(x_{i_2+1})<o(x_{i_2})$
-and such that $o(x_j)=o(x_{i_1+1})$ for all $i_1+1\leq j\leq i_2$.
-Continuing in this way, there are $i_1<i_2<\cdots$ such that $o(x_i)$ shrinks
-for all $i=i_j$ and $o(x_i)$ stays constant everywhere else. Thus, if $b$ were negative,
-there would be some $i$ such that $o(x_i)<o(b)$, which, since $x_i$ is also negative,
-would imply $x_i>b$, contradicting that $x_i\ll b$. This proves Claim 1.
-
-Claim 2: Whenever $a\ll' b$ and $a\geq 0$, then $o(a)>o(b)$.
-To see this, assume $a\geq 0$ and $a\ll' b$, so there is a sequence
-$a=x_0\ll x_1\ll\cdots$ with each $x_i\ll b$.
-
-Case 1: All the $o(x_i)$ are equal. Then each $LC(x_{i+1})\geq LC(x_i)+r$, so by Lemma
-\ref{generalizedarchimedeanlemma}, there is some $i$ such that $LC(x_i)>LC(b)$.
-Since $x_i\ll b$, this implies $o(x_i)>o(b)$. Thus $o(a)=o(x_0)=o(x_i)>o(b)$, as desired.
-
-Case 2: There is some minimal $i$ such that $o(x_{i+1})\not=o(x_{i})$.
-Since $a\geq 0$ and $a=x_0$, it follows that $x_i\geq 0$ and $x_{i+1}\geq 0$. Since
-$x_{i+1}>x_{i}$, this implies $o(x_{i+1})<o(x_{i})$.
-Since $x_{i+1}\ll b$, this implies $o(b)\geq o(x_{i+1})>o(x_i)$.
-By minimality of $i$, $o(x_i)=o(x_0)=o(a)$, so $o(a)>o(b)$, as desired. This proves Claim 2.
-
-Finally we prove the lemma. Suppose $x_0\ll' x_1\ll' \cdots$, and let
-$y$ be any formal Laurent series, we must show there is some $i$ such that
-$y\ll x_i$. By Claim 1, $x_1,x_2,\ldots\geq 0$.
-By Claim 2, for all $i\geq 1$, $o(x_{i+1})<o(x_i)$.
-Since $o$ is an integer-valued function, it follows that there is some $i>0$
-such that $o(x_i)<o(y)$. By Claim 1, $y\geq 0$. Since $x_i\geq 0$ and $y\geq 0$
-and $o(x_i)<o(y)$, it follows $y\ll x_i$.
-\end{proof}
-
+We omit the proof of Lemma \ref{tedioustheorem} because it is very tedious and
+we do not need it anywhere later in the paper. It merely serves to explain
+why formal Laurent series are still not good enough to avoid the AGI roadblock
+from this paper.
 Just as we argued that a genuine AGI should be capable of engaging in tasks that
 involve inherently non-Archimedean rewards, by similar reasoning, an AGI should
 be capable of engaging in tasks that involve inherently non-2-Archimedean rewards.
@@ -796,6 +763,56 @@ It is not hard to show that all the structures in Example \ref{nonexamples} are
 non-2-Archimedean. Thus, replacing real number rewards by formal Laurent series
 rewards is not enough to remove the roadblock, but it would at least expand the
 types of rewards which are possible.
+
+% \begin{proof}
+% Let $r>0$. For simplicity, we write $\ll$ for $\ll_r$ and $\ll'$ for
+% $\ll'_r$.
+
+% Claim 1: Whenever $a\ll' b$, then $b\geq 0$.
+% To see this, assume $a\ll' b$, so there are $a=x_0,x_1,\ldots$ such that each
+% $x_i\ll x_{i+1}$ and each $x_i\ll b$.
+% If any $x_i\geq 0$ then, since $x_i\ll b$, it follows that $b\geq 0$, as desired.
+% But suppose every $x_i<0$.
+% If all the $o(x_i)$ were equal, then, since each
+% $x_i\ll x_{i+1}$, it would follow that each $LC(x_{i})\leq LC(x_{i+1})-r$, so Lemma
+% \ref{generalizedarchimedeanlemma} would imply $LC(x_i)>0$ for some $i$, contradicting
+% the assumption that $x_i<0$. So there is some minimal $i_1$ such
+% that $o(x_{i_1+1})\not=o(x_{i_1})$,
+% and since $x_{i_1}$ and $x_{i_1+1}$ are negative, this implies
+% $o(x_{i_1+1})<o(x_{i_1})$, and by minimality of $i_1$, $o(x_j)=o(x_0)$ for all
+% $j\leq i_1$.
+% By identical reasoning applied to the sequence $x_{i_1},x_{i_1+1},\ldots$,
+% there is some minimal $i_2>i_1$ such that $o(x_{i_2+1})<o(x_{i_2})$
+% and such that $o(x_j)=o(x_{i_1+1})$ for all $i_1+1\leq j\leq i_2$.
+% Continuing in this way, there are $i_1<i_2<\cdots$ such that $o(x_i)$ shrinks
+% for all $i=i_j$ and $o(x_i)$ stays constant everywhere else. Thus, if $b$ were negative,
+% there would be some $i$ such that $o(x_i)<o(b)$, which, since $x_i$ is also negative,
+% would imply $x_i>b$, contradicting that $x_i\ll b$. This proves Claim 1.
+
+% Claim 2: Whenever $a\ll' b$ and $a\geq 0$, then $o(a)>o(b)$.
+% To see this, assume $a\geq 0$ and $a\ll' b$, so there is a sequence
+% $a=x_0\ll x_1\ll\cdots$ with each $x_i\ll b$.
+
+% Case 1: All the $o(x_i)$ are equal. Then each $LC(x_{i+1})\geq LC(x_i)+r$, so by Lemma
+% \ref{generalizedarchimedeanlemma}, there is some $i$ such that $LC(x_i)>LC(b)$.
+% Since $x_i\ll b$, this implies $o(x_i)>o(b)$. Thus $o(a)=o(x_0)=o(x_i)>o(b)$, as desired.
+
+% Case 2: There is some minimal $i$ such that $o(x_{i+1})\not=o(x_{i})$.
+% Since $a\geq 0$ and $a=x_0$, it follows that $x_i\geq 0$ and $x_{i+1}\geq 0$. Since
+% $x_{i+1}>x_{i}$, this implies $o(x_{i+1})<o(x_{i})$.
+% Since $x_{i+1}\ll b$, this implies $o(b)\geq o(x_{i+1})>o(x_i)$.
+% By minimality of $i$, $o(x_i)=o(x_0)=o(a)$, so $o(a)>o(b)$, as desired. This proves Claim 2.
+
+% Finally we prove the lemma. Suppose $x_0\ll' x_1\ll' \cdots$, and let
+% $y$ be any formal Laurent series, we must show there is some $i$ such that
+% $y\ll x_i$. By Claim 1, $x_1,x_2,\ldots\geq 0$.
+% By Claim 2, for all $i\geq 1$, $o(x_{i+1})<o(x_i)$.
+% Since $o$ is an integer-valued function, it follows that there is some $i>0$
+% such that $o(x_i)<o(y)$. By Claim 1, $y\geq 0$. Since $x_i\geq 0$ and $y\geq 0$
+% and $o(x_i)<o(y)$, it follows $y\ll x_i$.
+% \end{proof}
+
+
 
 
 \subsubsection{Hyperreal numbers}
