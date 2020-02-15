@@ -642,23 +642,25 @@ A \emph{formal Laurent series} is a formal expression of the following form
 (where $m$ can be any integer and $a_{-m},a_{-(m-1)},\ldots,a_0,a_1,a_2,\ldots$
 are real numbers, $a_{-m}\not=0$):
 \[
-\sum_{i=-m}^\infty a_i x^i.
+\sum_{i=-m}^\infty a_i \epsilon^i.
 \]
-Suppose $A=\sum_{i=-m}^\infty a_ix^i$
-and $B=\sum_{i=-n}^\infty b_ix^i$ are two distinct formal Laurent series.
+Suppose $A=\sum_{i=-m}^\infty a_i\epsilon^i$
+and $B=\sum_{i=-n}^\infty b_i\epsilon^i$ are two distinct formal Laurent series.
 We declare $A<B$ if and only if $a_i<b_i$ where $i$ is the smallest
 index such that $a_i\not=b_i$ (where we consider $a_i$ to be $0$ for all
 $i<-m$ and we consider $b_i$ to be $0$ for all $i<-n$).
 \end{definition}
 
 We can consider the real numbers $\mathbb R$ to be embedded in the formal Laurent
-series by way of the embedding $r\mapsto rx^0$. Having done so, the intuition is that,
-for example, $1x^1$ is what we might call a ``first-order infinitesimal number'', smaller
+series by way of the embedding $r\mapsto r\epsilon^0$. Having done so, the intuition is that,
+for example, $1\epsilon^1$ is what we might call a ``first-order
+infinitesimal number'', smaller
 than every positive real;
-$1x^2$ is what we might call a ``second-order infinitesimal number'', smaller than every
+$1\epsilon^2$ is what we might call a ``second-order infinitesimal number'',
+smaller than every
 positive first-order infinitesimal number; and so on. Likewise,
-$1x^{-1}$ is what we might call a ``first-order infinite number'', bigger than
-every real; $1x^{-2}$ is what we might call a ``second-order infinite number'', bigger
+$1\epsilon^{-1}$ is what we might call a ``first-order infinite number'', bigger than
+every real; $1\epsilon^{-2}$ is what we might call a ``second-order infinite number'', bigger
 than every first-order infinite number; and so on. Thus, the formal Laurent series are
 quite adequate to address the specific problem described by
 Wirth et al \cite{wirth2017survey} in which an infinite negative reward is required when the
@@ -673,14 +675,14 @@ discussed below.
 \begin{example}
 (Examples of formal Laurent series comparisons)
 \begin{enumerate}
-    \item Consider $A=5x^{-1}-2x^{0}+3x^1+4x^2$ and
-    $B=5x^{-1}-2x^0+1x^1+4x^2+5x^6$.
-    The $x^{-1}$- and $x^0$-coefficients of $A$ and $B$ are equal, so
-    we compare their $x^1$-coefficients. $A$ has an $x^1$-coefficient of $3$ and
-    $B$ has an $x^1$-coefficient of $1$, and $3>1$, so $A>B$.
-    \item Consider $A=999999x^5$ and $B=0.00001x^{4}$.
-    We consider $A$ to have an $x^{4}$-coefficient of $0$, which is smaller than
-    $B$'s $x^{4}$-coefficient ($0.00001$), so $A<B$.
+    \item Consider $A=5\epilon^{-1}-2\epsilon^{0}+3\epsilon^1+4\epsilon^2$ and
+    $B=5\epsilon^{-1}-2\epsilon^0+1\epsilon^1+4\epsilon^2+5\epsilon^6$.
+    The $\epsilon^{-1}$- and $\epsilon^0$-coefficients of $A$ and $B$ are equal, so
+    we compare their $\epsilon^1$-coefficients. $A$ has an $\epsilon^1$-coefficient of $3$ and
+    $B$ has an $\epsilon^1$-coefficient of $1$, and $3>1$, so $A>B$.
+    \item Consider $A=999999\epsilon^5$ and $B=0.00001\epsilon^{4}$.
+    We consider $A$ to have an $\epsilon^{4}$-coefficient of $0$, which is smaller than
+    $B$'s $\epsilon^{4}$-coefficient ($0.00001$), so $A<B$.
 \end{enumerate}
 \end{example}
 
@@ -692,19 +694,19 @@ Lemma \ref{generalizedarchimedeanlemma}.
 \label{significantorderednessoflaurent}
 \begin{enumerate}
 \item
-For every Laurent series $A=\sum_{j=-m}^\infty a_j$, let $o(A)=-m$ (we call this the
-\emph{order} of $A$), and let $LC(A)$ be the $x^{-o(A)}$-coefficient of $A$ (we call
+For every Laurent series $A=\sum_{i=-m}^\infty a_i\epsilon^i$, let $o(A)=-m$ (call this the
+\emph{order} of $A$), and let $LC(A)$ be the $\epsilon^{o(A)}$-coefficient of $A$ (call
 this the \emph{leading coefficient} of $A$).
 \item
 Let $r>0$ be any positive real number.
-For any formal Laurent series $A=\sum_{i=-m}^\infty a_ix^i$
-and $B=\sum_{i=-n}^\infty b_ix^i$,
+For any formal Laurent series $A=\sum_{i=-m}^\infty a_i\epsilon^i$
+and $B=\sum_{i=-n}^\infty b_i\epsilon^i$,
 we say $A\ll_r B$ if one of the following conditions holds:
     \begin{itemize}
         \item
-        $o(A)<o(B)$ and $A>0$; or
+        $o(A)>o(B)$ and $B>0$; or
         \item
-        $o(A)>o(B)$ and $B<0$; or
+        $o(A)<o(B)$ and $A<0$; or
         \item
         $o(A)=o(B)$ and $LC(A)\leq LC(B)-r$.
     \end{itemize}
@@ -717,12 +719,12 @@ structure according to $\ll_r$, are non-Archimedean.
 \end{lemma}
 
 \begin{proof}
-Let $x_0=0x^1$, $x_1=rx^1$, $x_2=2rx^1$, and in general let
-$x_i=irx^1$. Let $x_\infty=1x^0$. Then each $x_i\ll_r x_{i+1}$,
+Let $x_0=0\epsilon^1$, $x_1=r\epsilon^1$, $x_2=2r\epsilon^1$, and in general let
+$x_i=ir\epsilon^1$. Let $x_\infty=1\epsilon^0$. Then each $x_i\ll_r x_{i+1}$,
 and yet each $x_i\ll_r x_\infty$.
 \end{proof}
 
-Unfortunately, while the formal Laurent series contain infinities and infinitesimals,
+Unfortunately, although the formal Laurent series contain infinities and infinitesimals,
 in a sense we will make formal, they still do not contain ``enough'' infinities and
 infinitesimals to accomodate genuine AGI. To make this formal, we introduce a weaker
 notion of Archimedeanness.
@@ -752,7 +754,7 @@ the formal Laurent series are $2$-Archimedean when considered as a
 significantly-ordered structure as in Definition \ref{significantorderednessoflaurent}.
 \end{lemma}
 
-We omit the proof of Lemma \ref{tedioustheorem} because it is very tedious and
+We omit the proof of Lemma \ref{tedioustheorem} because it is somewhat tedious and
 we do not need it anywhere later in the paper. It merely serves to explain
 why formal Laurent series are still not good enough to avoid the AGI roadblock
 from this paper.
