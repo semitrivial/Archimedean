@@ -704,9 +704,9 @@ and $B=\sum_{i=-n}^\infty b_i\epsilon^i$,
 we say $A\ll_r B$ if one of the following conditions holds:
     \begin{itemize}
         \item
-        $o(A)>o(B)$ and $B>0$; or
+        $o(A)>o(B)$ and $LC(B)>0$; or
         \item
-        $o(A)<o(B)$ and $A<0$; or
+        $o(A)<o(B)$ and $LC(A)<0$; or
         \item
         $o(A)=o(B)$ and $LC(A)\leq LC(B)-r$.
     \end{itemize}
@@ -742,9 +742,7 @@ $x_0,x_1,\ldots$ such that the following conditions hold:
     \item
     Each $x_i\ll y$.
 \end{enumerate}
-We say $(X,\ll)$ is \emph{$2$-Archimedean} if for every $X$-sequence
-$x_0\ll' x_1\ll' \cdots$ and every $y\in X$, there is some $i$ such that
-$y\ll x_i$.
+We say $(X,\ll)$ is \emph{$2$-Archimedean} if $(X,\ll')$ is Archimedean.
 \end{definition}
 
 \begin{lemma}
