@@ -918,14 +918,17 @@ bird's-eye view.
 The surreal numbers (or a computable subset thereof) seem like the most promising
 candidate for RL rewards that could plausibly lead to AGI. We would certainly
 hesitate to call them ``practical'', though. To work with any but the most trivial
-of surreal numbers, one would need to implement sophisticated machinery for
-dealing with computable ordinals, and that's just to get one's foot in the door.
+of surreal numbers, one would need to implement sophisticated symbolic-logical
+machinery, and that's just to get one's foot in the door. This does, however, offer
+a ray of hope in the sense that doing deep learning techniques with surreal numbers
+would be a way to combine both symbolic logic and statistical methods into a joint
+approach.
 
-For proving abstract structural results about AGI, it is unclear
-whether hyperreal number RL rewards or surreal number RL rewards would be more
-useful. It is plausible that certain abstract structural results could be easier
-to prove using hyperreal rewards, and certain results could be easier to
-prove using surreal rewards.
+% For proving abstract structural results about AGI, it is unclear
+% whether hyperreal number RL rewards or surreal number RL rewards would be more
+% useful. It is plausible that certain abstract structural results could be easier
+% to prove using hyperreal rewards, and certain results could be easier to
+% prove using surreal rewards.
 
 
 \section{Conclusion}
@@ -939,8 +942,8 @@ of AGI, because the real numbers have the Archimedean property, which makes it
 impossible to use them to accurately portray the value of actions when a task
 involves inherently non-Archimedean rewards. Thus, we argue, traditional
 RL cannot possibly lead to AGI, because a genuine AGI should have no trouble
-at least making attempts to engage in tasks that inherently involve
-non-Archimedean structures. We suggested two possible ways
+comprehending and at least attempting tasks that inherently involve
+non-Archimedean rewards. We suggested two possible ways
 to modify traditional reinforcement learning to fix this bug: switch to
 preference-based reinforcement learning, or else generalize reinforcement learning
 to allow rewards from a non-Archimedean number system.
