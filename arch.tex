@@ -1,29 +1,28 @@
-\documentclass[reqno]{article}
-\usepackage{amsthm}
-\usepackage{amsfonts}
-\usepackage{amsmath}
+\documentclass[twoside,11pt]{article}
+\usepackage{jagi}
 \usepackage{mathrsfs}
-\usepackage{amssymb}
-\theoremstyle{definition}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{amsmath}
 \newtheorem{question}[theorem]{Question}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{definition}{Definition}
 
-\begin{document}
+\jagiheading{TBD}{TBD}{TBD}{TBD}{TBD}{TBD}{TBD}
+{S.\ Alexander}
+
+\ShortHeadings{The Archimedean trap}{S.\ Alexander}
+
+\author{\name Samuel Allen Alexander
+\email samuelallenalexander@gmail.com \\
+\addr Quantitative Research Analyst\\
+The U.S.\ Securities and Exchange Commission\\
+New York Regional Office
+}
+
+\editor{TBD}
 
 \title{The Archimedean trap: Why
 traditional reinforcement learning will probably not yield AGI}
 
-\author{Samuel A.~Alexander\thanks{Email:
-samuelallenalexander@gmail.com}\hphantom{*}\footnote{2010 Mathematics 
-Subject Classification: 97R40 (Primary), 26E35 (Secondary)}\\
-\emph{The U.S.\ Securities and Exchange Commission}}
-\date{2020}
+\begin{document}
+
 \maketitle
 
 \begin{abstract}
@@ -68,7 +67,7 @@ is the following.
 \label{specializedarchimedeanlemma}
 (The Archimedean Property\footnote{The Archimedean property is named after Archimedes of Syracuse.
 A similar property appears as the fifth axiom in his \emph{On the Sphere
-and Cylinder} \cite{archimedes}:
+and Cylinder} \citep{archimedes}:
 \begin{quote}
     Further, of unequal lines, unequal surfaces, and unequal
     solids, the greater exceeds the less by such a magnitude
@@ -84,7 +83,7 @@ by stopping his sentence at ``...can be made to exceed any
 assigned magnitude'', if that were his intention).
 
 The Archimedean property is also closely related to Definition 4 of Book V of Euclid's
-\emph{Elements} \cite{euclid}:
+\emph{Elements} \citep{euclid}:
 \begin{quote}
     (Those) magnitudes are said to have a ratio
     with respect to one another which, being
@@ -250,9 +249,9 @@ want to measure).
 Proposition \ref{maindilemma} tells us that we cannot accurately measure
 non-Archimedean structures using real numbers\footnote{There is an area of research
 known as \emph{measurement theory}, which, traditionally,
-``takes the real numbers as a pre-given numerical domain'' \cite{niederee1992numbers}.
+``takes the real numbers as a pre-given numerical domain'' \citep{niederee1992numbers}.
 Some work has been done to generalize measurement theory away from this assumption
-\cite{narens1974} \cite{skala1975} \cite{rizza2016divergent}.
+\citep{narens1974, skala1975, rizza2016divergent}.
 We would submit this paper as further motivation in that direction.}.
 Any attempt to do so will necessarily be misleading, because ordering
 relationships among the non-Archimedean structures will fail to be reflected
@@ -279,8 +278,7 @@ exhibiting \emph{diminishing returns}, in the sense that the measurements of
 $x_i$ and $x_j$ are approximately equal for large $i,j$.
 If human intelligence is non-Archimedean, this could potentially shed light on
 a psychometrical phenomenon called \emph{Spearman's Law of Diminishing Returns}
-\cite{spearman1927abilities} \cite{blum2017spearman}
-\cite{hernandez2019ai}, the empirical
+\citep{spearman1927abilities, blum2017spearman, hernandez2019ai}, the empirical
 tendency of cognitive ability tests to be less correlated in
 high-intelligence populations. Even tiny measurement errors would eventually
 dominate the test result differences as the true results plateau.
@@ -313,7 +311,7 @@ dominate the test result differences as the true results plateau.
         (see G\"odel's incompleteness theorems), and each $T_i$ is
         significantly weaker than $T_\infty$. In this sense, logical theories
         are non-Archimedean. In the field
-        of \emph{proof theory} \cite{pohlers2008proof} \cite{rathjen},
+        of \emph{proof theory} \citep{pohlers2008proof, rathjen},
         logicians measure the logical strength of theories using computable
         ordinal numbers, another non-Archimedean number system.
         \item
@@ -355,7 +353,7 @@ dominate the test result differences as the true results plateau.
         they prefer it ...\ and would not resign it for any quantity of the other
         pleasure which their nature is capable of, we are justified in ascribing to
         the preferred enjoyment a superiority in quality, so far outweighing quantity
-        as to render it, in comparison, of small account'' \cite{mill}.
+        as to render it, in comparison, of small account'' \citep{mill}.
         This suggests that Bentham's pleasures are non-Archimedean.
         \item
         (AGI)
@@ -366,7 +364,7 @@ dominate the test result differences as the true results plateau.
         better}:
         ``The very day you start, you will go home a better man, and the same thing
         will happen the day after. Every day, day after day, you will get better
-        and better.'' \cite{protagoras}} AGIs $A_0,A_1,\ldots$ such that
+        and better.'' \citep{protagoras}} AGIs $A_0,A_1,\ldots$ such that
         each $A_{i}$ is significantly less
         intelligent than $A_{i+1}$, and another AGI $A_\infty$ such that each $A_i$
         is significantly less
@@ -379,7 +377,7 @@ dominate the test result differences as the true results plateau.
         Proposition \ref{maindilemma} shows it is
         impossible to measure machine intelligence using real numbers without some
         of those measurements being misleading\footnote{This would solve an open problem
-        implicitly stated by Legg and Hutter \cite{legg} when they said of their
+        implicitly stated by \citet{legg} when they said of their
         real-number universal intelligence measure: ``...none of these people have
         been able to communicate why the work [on measuring universal intelligence
         using real numbers] is so obviously flawed in any concrete way ...
@@ -389,9 +387,8 @@ dominate the test result differences as the true results plateau.
         (Nonstandard cosmologies)
         Some
         authors
-        \cite{al2016surreal} \cite{andreka2012logic}
-        \cite{reeder2012infinitesimals} \cite{rosinger2007cosmic}
-        \cite{chen2019infinitesimal} have
+        \citep{al2016surreal, andreka2012logic, reeder2012infinitesimals,
+        rosinger2007cosmic, chen2019infinitesimal} have
         even speculated about the nature of non-Archimedean space and/or
         time.
     \end{itemize}
@@ -409,8 +406,8 @@ authors further constrain them to be rational numbers).
 
 By restricting rewards to be real (or rational) numbers, we unconsciously
 constrain RL to only be applicable toward tasks of an inherently Archimedean
-nature. For example, Wirth et al point out \cite{wirth2017survey} that
-in tasks related to cancer treatment \cite{zhao2009reinforcement},
+nature. For example, \citet{wirth2017survey} point out that
+in tasks related to cancer treatment \citep{zhao2009reinforcement},
 ``the death of a patient should be avoided at any cost. However, an
 infinitely negative reward breaks classic reinforcement learning algorithms
 and arbitrary, finite values have to be selected.'' This problem could be
@@ -429,7 +426,7 @@ Whenever the agent stands and bows, the agent is rewarded with applause based on
 the beauty of the song the agent
 composed\footnote{To quote Wang and Hammer: ``Decision makings often do not happen
 at the level of basic operations, but at the level of composed actions, where
-there are usually infinite possibilities.'' \cite{wang2015assumptions}}. Assuming
+there are usually infinite possibilities'' \citep{wang2015assumptions}.}. Assuming
 musical beauty is
 non-Archimedean, such an environment falls outside the possibility of traditional
 RL. By Lemma \ref{maindilemma}, there is no way to assign real number
@@ -490,7 +487,7 @@ the AGI is able to perform well at it). When we prove that the Halting Problem
 is unsolvable, we do so by considering contrived programs that we could write if
 the Halting Problem were solvable. The contrivedness of those programs does not
 invalidate the proof of the unsolvability of the Halting Problem. Again, when we
-prove that C++ templates are Turing complete \cite{veldhuizen}, we do so by
+prove that C++ templates are Turing complete \citep{veldhuizen}, we do so by
 considering extremely
 bizarre C++ templates that would never arise naturally in a software
 studio. This does not invalidate the proof that C++ templates are Turing complete.
@@ -558,7 +555,7 @@ system for its rewards) to apply to certain
 non-Archimedean tasks\footnote{Perhaps explaining why
 ``despite almost two decades of RL research, there has been little solid
 evidence of RL systems that may one day lead to [AGI]''
-\cite{livingston}.}, which, however contrived they are, could certainly be
+\citep{livingston}.}, which, however contrived they are, could certainly be
 attempted by an AGI. Traditional reinforcement learning will not lead to AGI.
 
 
@@ -575,7 +572,7 @@ lead to AGI. There might be other roadblocks besides the inadequate reward
 number system\footnote{For example, many RL authors consider non-deterministic
 environments where rewards and observations include an element of
 randomness. The probabilities involved are, traditionally, assumed to be
-real numbers. Perhaps some recent work \cite{benci2013non} on non-Archimedean
+real numbers. Perhaps some recent work \citep{benci2013non} on non-Archimedean
 probability could be relevant against that roadblock.}.
 
 \subsection{Preference-based reinforcement learning}
@@ -583,7 +580,7 @@ probability could be relevant against that roadblock.}.
 A lot of exciting research has been done on non-traditional variations
 of RL where, instead of giving the agent numerical rewards for taking actions,
 one instead informs the agent about the relative preference of various
-actions or action-sequences. See \cite{wirth2017survey} for a survey.
+actions or action-sequences. See \citep{wirth2017survey} for a survey.
 This very nicely side-steps the problems from this paper.
 
 % A problem still does remain, as illustrated by the cancer example (ibid).
@@ -606,14 +603,14 @@ This very nicely side-steps the problems from this paper.
 
 The most obvious way to modify RL to avoid the problems presented in this
 paper is to change which number system is used\footnote{Anticipated
-by \cite{rizza2016divergent}.}.
+by \citet{rizza2016divergent}.}.
 As far as this author is aware,
 the choice to use real (or rational) numbers for rewards was not made based
-on any fundamental criteria\footnote{Nieder{\'e}e points out
-\cite{niederee1992numbers} that there are
+on any fundamental criteria\footnote{\cite{niederee1992numbers} points out
+that there are
 no deeper reasons to assume that the number system should necessarily
-even have the same cardinality as $\mathbb R$. And Rizza says
-\cite{rizza2016divergent}: ``No particular feature of the space of informational
+even have the same cardinality as $\mathbb R$. And \cite{rizza2016divergent} says:
+``No particular feature of the space of informational
 states suggests that such a codomain [as $\mathbb R$] should be selected''.}. The real
 (or rational) numbers are currently a
 useful pragmatic choice because they are easy to compute with using 21st
@@ -633,7 +630,7 @@ surreal numbers.
 
 \subsubsection{Formal Laurent series}
 
-David Tall described \cite{tall1980looking} the following
+David \cite{tall1980looking} described the following
 real-number-extending number system (which he called the ``superreals'', but
 that vocabulary does not seem to have caught on).
 
@@ -663,7 +660,7 @@ $1\epsilon^{-1}$ is what we might call a ``first-order infinite number'', bigger
 every real; $1\epsilon^{-2}$ is what we might call a ``second-order infinite number'', bigger
 than every first-order infinite number; and so on. Thus, the formal Laurent series are
 quite adequate to address the specific problem described by
-Wirth et al \cite{wirth2017survey} in which an infinite negative reward is required when the
+\cite{wirth2017survey} in which an infinite negative reward is required when the
 RL agent kills the cancer patient.
 
 There are natural ways to define arithmetic on formal Laurent series, but we will
@@ -818,7 +815,7 @@ types of rewards which are possible.
 \subsubsection{Hyperreal numbers}
 
 The field of mathematics where the calculus is formalized with infinite and infinitesimal
-quantities is called \emph{nonstandard analysis} \cite{robinson}. The numbers most
+quantities is called \emph{nonstandard analysis} \citep{robinson}. The numbers most
 commonly associated with this field are the so-called \emph{hyperreal numbers}.
 
 The hyperreal numbers can be
@@ -830,7 +827,7 @@ usefulness of reinforcement learning with hyperreal rewards.
 
 Nevertheless, the hyperreals
 might be useful for proving abstract structural properties about AGI\footnote{Similar to
-the way we use free ultrafilters in \cite{alexander2019intelligence} to obtain
+the way we use free ultrafilters in \citep{alexander2019intelligence} to obtain
 comparators of the utility-maximizing ability of traditional deterministic RL agents,
 and prove structural properties about said comparators.
 In fact, in that paper, we essentially independently re-invented the free ultrafilter
@@ -848,26 +845,11 @@ All of the
 well-known non-Archimedean extensions of $\mathbb R$
 (including formal Laurent series and hyperreals) are subsystems of the
 so-called \emph{surreal numbers}
-\cite{conway} \cite{knuth} \cite{ehrlich2012absolute}. The surreal
+\citep{conway, knuth, ehrlich2012absolute}. The surreal
 numbers were initially discovered during John Conway's attempts to study
 two-player combinatorial games like Go and Chess, so it would not be
 surprising if they turn out to be important in the eventual development of
 AGI.
-
-% Calculus on the surreal numbers is still relatively cutting-edge, but work
-% in this area in the last
-% decade \cite{rubinstein2014surreal} \cite{lipparini2016surreal}
-% \cite{costin2015integration}
-% does seem to be
-% moving in directions which could make gradient-descent methods possible over
-% the surreals; perhaps someday it will be possible to do deep reinforcement learning
-% with surreal rewards\footnote{Perhaps the overly-constrained rewards in traditional
-% deep reinforcement learning offer an answer to at least the RL part of Goertzel's
-% question \cite{goertzel2015there}, ``Are there Deep Reasons Underlying the
-% Pathologies of Today's Deep Learning Algorithms?''
-% (albeit a very different answer to the one Goertzel proposes)}. Perhaps
-% work in that direction could be accelerated if
-% researchers in the field of AGI would lend a hand.
 
 Unlike the hyperreals,
 the construction of the surreal numbers does not depend on any
@@ -892,10 +874,10 @@ In other words, for any particular RL environment $e$ with computable surreal nu
 rewards, there must be some minimal computable ordinal $\alpha$ such that $e$ has
 rewards from $E_\alpha$; if an AGI is not intelligent enough to comprehend $\alpha$,
 then it seems like there should be no way for the AGI to comprehend $e$
-either\footnote{This situation is highly reminiscent of \cite{hibbard2011measuring}.}.
+either\footnote{This situation is highly reminiscent of \citep{hibbard2011measuring}.}.
 We would submit
 this state of affairs as strong evidence in favor of our thesis
-\cite{alexander2019measuring} that a machine's intelligence ought to be measured
+\citep{alexander2019measuring} that a machine's intelligence ought to be measured
 in terms of the computable ordinals which the machine comprehends.
 
 The above paragraph points at a possible joint path
@@ -955,6 +937,6 @@ Brendon Miller-Boldt, Stewart Shapiro, and the
 SEC's Quantitative Analytics Unit's machine learning seminar
 for comments and feedback.
 
-\bibliographystyle{plain}
+%\bibliographystyle{plain}
 \bibliography{arch}
 \end{document}
