@@ -196,6 +196,7 @@ may or may not. To make this more precise,
 we introduce the following formalism, adapting from Lemma \ref{generalizedarchimedeanlemma}.
 
 \begin{definition}
+\label{archimedeandefn}
     A \emph{significantly-ordered structure} is a collection $X$ with
     an ordering $\ll$.
     For $x_1,x_2\in X$, we say $x_1$ is \emph{significantly less}
@@ -716,9 +717,34 @@ structure according to $\ll_r$, are non-Archimedean.
 \end{lemma}
 
 \begin{proof}
-Let $x_0=0\epsilon^1$, $x_1=r\epsilon^1$, $x_2=2r\epsilon^1$, and in general let
-$x_i=ir\epsilon^1$. Let $x_\infty=1\epsilon^0$. Then each $x_i\ll_r x_{i+1}$,
-and yet each $x_i\ll_r x_\infty$.
+    Let $r>0$.
+    Recall from Definition \ref{archimedeandefn} that the formal Laurent series,
+    considered as a significantly-ordered structure according to $\ll_r$, are
+    Archimedean if and only if the following statement is true:
+    \begin{itemize}
+    \item
+        For every sequence $x_0\ll_r x_1\ll_r x_2 \ll_r \cdots$ of formal Laurent series,
+        for every formal Laurent series $x_\infty$, there is some $i$ such that
+        $x_\infty\ll_r x_i$.
+    \end{itemize}
+    We will exhibit a particular sequence $x_0\ll_r x_1\ll_r x_2\ll_r\cdots$
+    of formal Laurent series, and a formal Laurent series $x_\infty$, such that the
+    above statement fails to hold, thereby showing that the formal Laurent series
+    are non-Archimedean.
+
+    Let $x_0=r\epsilon^1$, $x_1=2r\epsilon^1$, $x_2=3r\epsilon^1$, and in general let
+    $x_i=(i+1)r\epsilon^1$. Let $x_\infty=1\epsilon^0$.
+    Thus $o(x_0)=o(x_1)=o(x_2)=\cdots=1$,
+    and $LC(x_0)=r$, $LC(x_1)=2r$, $LC(x_2)=3r$, and in general $LC(x_i)=(i+1)r$
+    for each $i=0,1,2,\ldots$. Meanwhile, $o(x_\infty)=0$ and $LC(x_\infty)=1$.
+
+    By Definition \ref{significantorderednessoflaurent},
+    each $x_i\ll_r x_{i+1}$ for $i=0,1,2,\ldots$ (because each $o(x_i)=o(x_{i+1})=1$
+    and each $LC(x_i)=(i+1)r\leq LC(x_{i+1})-r=(i+2)r-r=(i+1)r$).
+    Thus, if the formal Laurent series were Archimedean, there would have to be some
+    $i\in\{0,1,\ldots\}$
+    such that $x_\infty\ll_r x_i$. This is impossible because
+    for any such $i$, $o(x_\infty)=0<1=o(x_i)$ and $LC(x_i)=(i+1)r>0$.
 \end{proof}
 
 Unfortunately, although the formal Laurent series contain infinities and infinitesimals,
