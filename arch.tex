@@ -431,13 +431,13 @@ there are usually infinite possibilities.''}. Assuming
 musical beauty is
 non-Archimedean, such an environment falls outside the possibility of traditional
 RL. By Lemma \ref{maindilemma}, there is no way to assign real number
-rewards to songs without misleading the agent. If $S_0,S_1,S_2,\ldots$ are songs
-where each $S_{i}$ is significantly less beautiful than $S_{i+1}$, and
-all the $S_i$ are significantly less beautiful than another song $S_\infty$,
+rewards to songs without misleading the agent. If $x_0,x_1,x_2,\ldots$ are songs
+where each $x_{i}$ is significantly less beautiful than $x_{i+1}$, and
+all the $x_i$ are significantly less beautiful than another song $y$,
 then there is no way to
-assign real-valued rewards to these songs such that each $S_{i}$ gets
-significantly less reward than $S_{i+1}$ and significantly less reward
-than $S_\infty$.
+assign real-valued rewards to these songs such that each $x_{i}$ gets
+significantly less reward than $x_{i+1}$ and significantly less reward
+than $y$.
 \end{example}
 
 Or, to re-use the cancer example, assume there are certain bad procedures the
@@ -459,9 +459,9 @@ typing up mathematical theories, and when the agent stands and bows, the agent
 is rewarded with applause based on the proof-theoretical strength of the theory
 (or hit with tomatoes if the theory is inconsistent).
 In Example \ref{nonexamples} we noted that proof-theoretical strength of theories
-is non-Archimedean. There exist theories $T_0,T_1,\ldots$, each significantly
-proof-theoretically weaker than the next, and another theory $T_\infty$,
-significantly proof-theoretically stronger than all the $T_i$'s. We cannot
+is non-Archimedean. There exist theories $x_0,x_1,\ldots$, each significantly
+proof-theoretically weaker than the next, and another theory $y$,
+significantly proof-theoretically stronger than all the $x_i$'s. We cannot
 possibly assign real-valued rewards to these theories without misleading the
 agent.
 \end{example}
@@ -474,12 +474,12 @@ type up mathematical subtheories in (say) the language of Peano arithmetic,
 accompanied by consistency proofs in (say) ZFC. It can be shown that the
 proof-theoretical strength of mathematical theories is still non-Archimedean,
 even when restricted to subtheories of arithmetic whose consistency can be
-proven in ZFC\footnote{For example, let $T_0$ be the theory of Peano arithmetic,
-and for each $i$, let $T_{i+1}$ be $T_i$ together with $CON(T_i)$, a canonical axiom
-encoding the consistency of $T_i$. Let $T_\infty$ be the theory of Peano arithmetic
-along with $CON(\cup_i T_i)$. ZFC is certainly adequate to prove the consistency of
-each of these theories. In the sense of Example \ref{nonexamples}, each $T_{i}$ is
-significantly weaker than $T_{i+1}$ and significantly weaker than $T_\infty$.}.
+proven in ZFC\footnote{For example, let $x_0$ be the theory of Peano arithmetic,
+and for each $i$, let $x_{i+1}$ be $x_i$ together with $CON(x_i)$, a canonical axiom
+encoding the consistency of $x_i$. Let $y$ be the theory of Peano arithmetic
+along with $CON(\cup_i x_i)$. ZFC is certainly adequate to prove the consistency of
+each of these theories. In the sense of Example \ref{nonexamples}, each $x_{i}$ is
+significantly weaker than $x_{i+1}$ and significantly weaker than $y$.}.
 
 The reader might object that the above theories-with-proofs example is contrived.
 But an AGI with human or better intelligence should have no problem
@@ -513,8 +513,8 @@ If we approximate $\omega$ with a real-value of, say, $1,000,000$,
 then after a long enough time spent in the environment, an AGI will be misled into
 thinking that it isn't worth the longer and longer wait-times between blue-button
 rewards: eventually, it will take more than $1,000,000$ blue-button-presses to get
-rewarded, and the AGI will consider it more worthwhile to get the guaranteed $+1$
-reward from the red button.
+rewarded, and the rewards will mislead the AGI into thinking
+it more worthwhile to get the guaranteed $+1$ reward from the red button.
 \end{example}
 
 Our critic could respond to Example \ref{funnyexample}
@@ -583,7 +583,7 @@ A lot of exciting research has been done on non-traditional variations
 of RL where, instead of giving the agent numerical rewards for taking actions,
 one instead informs the agent about the relative preference of various
 actions or action-sequences. See \citep{wirth2017survey} for a survey.
-This very nicely side-steps the problems from this paper.
+This nicely side-steps the problems from this paper.
 
 % A problem still does remain, as illustrated by the cancer example (ibid).
 % In traditional RL, although we would want to assign $-\infty$ reward to
@@ -626,7 +626,7 @@ the familiarity argument is totally irrelevant in the field of AGI.
 
 Various non-Archimedean number systems exist. Number systems can be
 discrete or continuous; the nature of reinforcement learning clearly
-suggests a continuous number system. We will consider three possible
+suggests a continuous number system. We will consider three continuous
 number systems: formal Laurent series; hyperreal numbers; and
 surreal numbers.
 
@@ -725,12 +725,12 @@ structure according to $\ll_r$, are non-Archimedean.
     \begin{itemize}
     \item
         For every sequence $x_0\ll_r x_1\ll_r x_2 \ll_r \cdots$ of formal Laurent series,
-        for every formal Laurent series $x_\infty$, there is some $i$ such that
-        $x_\infty\ll_r x_i$.
+        for every formal Laurent series $y$, there is some $i$ such that
+        $y\ll_r x_i$.
     \end{itemize}
     We will exhibit a particular sequence $x_0\ll_r x_1\ll_r x_2\ll_r\cdots$
-    of formal Laurent series, and a formal Laurent series $x_\infty$, such that the
-    above statement fails to hold, thereby showing that the formal Laurent series
+    of formal Laurent series, and a formal Laurent series $y$, such that the
+    above statement fails, thereby showing that the formal Laurent series
     are non-Archimedean.
 
     For brevity, we will write $a\epsilon^b$ for the formal Laurent series
@@ -738,23 +738,24 @@ structure according to $\ll_r$, are non-Archimedean.
     Thus, $o(a\epsilon^b)=b$ (provided $a\not=0$), and $LC(a\epsilon^b)=a$.
 
     Let $x_0=r\epsilon^1$, $x_1=2r\epsilon^1$, $x_2=3r\epsilon^1$, and in general let
-    $x_i=(i+1)r\epsilon^1$. Let $x_\infty=1\epsilon^0$.
+    $x_i=(i+1)r\epsilon^1$. Let $y=1\epsilon^0$.
     Thus $o(x_0)=o(x_1)=o(x_2)=\cdots=1$,
     and $LC(x_0)=r$, $LC(x_1)=2r$, $LC(x_2)=3r$, and in general $LC(x_i)=(i+1)r$
-    for each $i=0,1,2,\ldots$. Meanwhile, $o(x_\infty)=0$ and $LC(x_\infty)=1$.
+    for each $i=0,1,2,\ldots$. Meanwhile, $o(y)=0$ and $LC(y)=1$.
 
     By Definition \ref{significantorderednessoflaurent},
     each $x_i\ll_r x_{i+1}$ for $i=0,1,2,\ldots$ (because each $o(x_i)=o(x_{i+1})=1$
     and each $LC(x_i)=(i+1)r\leq LC(x_{i+1})-r=(i+2)r-r=(i+1)r$).
     Thus, if the formal Laurent series were Archimedean, there would have to be some
     $i\in\{0,1,\ldots\}$
-    such that $x_\infty\ll_r x_i$. This is impossible because
-    for any such $i$, $o(x_\infty)=0<1=o(x_i)$ and $LC(x_i)=(i+1)r>0$.
+    such that $y\ll_r x_i$. This is impossible because
+    for any such $i$, $o(y)=0<1=o(x_i)$ and $LC(x_i)=(i+1)r>0$.
 \end{proof}
 
 Unfortunately, although the formal Laurent series contain infinities and infinitesimals,
 in a sense we will make formal, they still do not contain ``enough'' infinities and
-infinitesimals to accomodate genuine AGI. To make this formal, we introduce a weaker
+infinitesimals to accomodate the fully general environments that an AGI should be able
+to attempt to operate in. To make this formal, we introduce a weaker
 notion of Archimedeanness.
 
 \begin{definition}
@@ -778,20 +779,20 @@ such that $y\ll x_i$.
 \end{definition}
 
 To be 2-Archimedean is a weaker condition than to be Archimedean, but it is
-still a condition, and one which there is no evident reason to assume should
-necessarily constrain reinforcement learning rewards in broad generality.
+still a condition, and one which there is evidently no reason to assume should
+constrain reinforcement learning rewards in general.
 For example, just as it is unclear whether musical beauty is Archimedean,
 likewise, it is unclear whether musical beauty is even $2$-Archimedean.
 If musical beauty is not $2$-Archimedean,
 then Example \ref{musicalexample} does not merely suggest the
-inadequacy of using real numbers for rewards, but of using any $2$-Archimedean number
-system for rewards. And if musical beauty is too informal,
+inadequacy of real number rewards, but of rewards from any $2$-Archimedean number
+system. And if musical beauty is too informal,
 we can still fall back to Example \ref{theoryexample}
 (the example about making the agent type up mathematical theories),
-for the strength of mathematical theories is also non-$2$-Archimedean.
+for the strength of mathematical theories can be shown to be non-$2$-Archimedean.
 
 In the following theorem, we show that the formal Laurent series are $2$-Archimedean.
-By the above paragraph, we consider this to be strong evidence that not only is
+By the above paragraph, we consider this to be evidence that not only is
 traditional reinforcement learning unlikely to lead to AGI (on account of its rewards
 being too restrictive); but even if we extended reinforcement learning to permit
 formal Laurent series rewards, the resulting framework would still probably not lead
@@ -875,10 +876,9 @@ comparators of the utility-maximizing ability of traditional deterministic RL ag
 and prove structural properties about said comparators.
 In fact, in that paper, we essentially independently re-invented the free ultrafilter
 construction of the hyperreals, without realizing it at the time!}.
-It can be shown that the hyperreals are not $2$-Archimedean, and indeed, not
-$\alpha$-Archimedean for any ordinal $\alpha$, where ``$\alpha$-Archimedean'' refers to a
-certain natural weakening of $2$-Archimedeanness. Thus, for the purpose of
-proving abstract theorems about RL agents with generalized rewards, the hyperreals
+It can be shown that the hyperreals are not even $2$-Archimedean (much less Archimedean).
+Thus, for the purpose of
+proving abstract theorems about RL agents with fully generalized rewards, the hyperreals
 would be more appropriate than the formal Laurent series.
 
 
@@ -975,7 +975,8 @@ to allow rewards from a non-Archimedean number system.
 
 \section*{Acknowledgments}
 
-We gratefully acknowledge Bryan Dawson, Mikhail Katz,
+We gratefully acknowledge Bryan Dawson, Jos{\'e} Hern{\'a}ndez-Orallo,
+Mikhail Katz,
 Brendon Miller-Boldt, Stewart Shapiro, and the
 SEC's Quantitative Analytics Unit's machine learning seminar
 for comments and feedback.
