@@ -152,10 +152,10 @@ quantify the fuzziness of the widgets, assigning them numerical
 fuzziness measures from some number system. Nine times out of ten,
 we choose to use the real numbers, or a subsystem thereof,
 often without a second thought. But suppose
-among these widgets, there happen to be widgets $w_1,w_2,\ldots$
-such that each $w_{i}$ is significantly less fuzzy than $w_{i+1}$,
-and another widget $w_\infty$ such that all the $w_i$'s are
-significantly less fuzzy than $w_\infty$.
+among these widgets, there happen to be widgets $x_0,x_1,\ldots$
+such that each $x_{i}$ is significantly less fuzzy than $x_{i+1}$,
+and another widget $y$ such that $x_i$ is
+significantly less fuzzy than $y$ for $i=0,1,\ldots$.
 Suddenly, our decision to use real numbers puts us in a bind.
 It is impossible to assign real number fuzziness measures to our
 widgets in such a way that significantly less fuzzy widgets get
@@ -199,18 +199,18 @@ we introduce the following formalism, adapting from Lemma \ref{generalizedarchim
 \label{archimedeandefn}
     A \emph{significantly-ordered structure} is a collection $X$ with
     an ordering $\ll$.
-    For $x_1,x_2\in X$, we say $x_1$ is \emph{significantly less}
-    than $x_2$ if $x_1\ll x_2$.
+    For $x_1,x_2\in X$, we say $x_1$ is \emph{significantly less than}
+    $x_2$ if $x_1\ll x_2$.
     A significantly-ordered structure is \emph{Archimedean} if it
     has the following property: for every $X$-sequence
     $x_0\ll x_1\ll x_2 \ll \cdots$,
-    for every $x_\infty\in X$, there is some $i$ such that $x_\infty\ll x_i$.
+    for every $y\in X$, there is some $i\in\{0,1,\ldots\}$ such that $y\ll x_i$.
 \end{definition}
 
 For any real number $r>0$, a prototypical example of an Archimedean
 significantly-ordered structure is the real
 numbers with $\ll$ defined such that
-$x\ll y$ if and only if $x\leq y-r$.
+$x_1\ll x_2$ if and only if $x_1\leq x_2-r$.
 
 \begin{definition}
     Suppose $(X,\ll)$ is a significantly-ordered structure.
@@ -218,14 +218,13 @@ $x\ll y$ if and only if $x\leq y-r$.
     if there is some real $r>0$ such that the following requirement holds:
     \begin{itemize}
         \item
-        For all $x,y\in X$, $x\ll y$ if and only if
-        $f(x)\leq f(y)-r$.
+        For all $x_1,x_2\in X$, $x_1\ll x_2$ if and only if
+        $f(x_1)\leq f(x_2)-r$.
     \end{itemize}
 \end{definition}
 
 The following proposition formalizes the dilemma we illustrated in
-Example \ref{fuzzywidgets} (think of $X$ as a set of things we
-want to measure).
+Example \ref{fuzzywidgets}.
 
 \begin{proposition}
 \label{maindilemma}
@@ -238,12 +237,12 @@ want to measure).
 \begin{proof}
     Assume, for sake of a contradiction, that some $f:X\to\mathbb R$
     exists which accurately measures $(X,\ll)$. Thus there is some real $r>0$ such that
-    for all $x,y\in X$, $x\ll y$ if and only if $f(x)\leq f(y)-r$.
+    for all $x_1,x_2\in X$, $x_1\ll x_2$ if and only if $f(x_1)\leq f(x_2)-r$.
     Since $X$ is non-Archimedean, there is some $X$-sequence
-    $x_0\ll x_1\ll x_2\ll\cdots$ and some $x_\infty\in X$
-    such that there is no $i$ such that $x_\infty\ll x_i$.
+    $x_0\ll x_1\ll x_2\ll\cdots$ and some $y\in X$
+    such that there is no $i$ such that $y\ll x_i$.
     By choice of $r$, each $f(x_{i})\leq f(x_{i+1})-r$ and there is no
-    $i$ such that $f(x_\infty)\leq f(x_i)-r$.
+    $i$ such that $f(y)\leq f(x_i)-r$.
     This contradicts Lemma \ref{generalizedarchimedeanlemma}.
 \end{proof}
 
@@ -264,19 +263,19 @@ length $1.5$.
 \begin{remark}
 (Spearman's Law of Diminishing Returns)
 Suppose $(X,\ll)$ is a non-Archimedean significantly-ordered structure
-with elements $x_0,x_1,\ldots$ and $x_\infty$ such that
-$x_0\ll x_1\ll\cdots$ and each $x_i\ll x_\infty$.
+with elements $x_0,x_1,\ldots$ and $y$ such that
+$x_0\ll x_1\ll\cdots$ and each $x_i\ll y$.
 Suppose $f:X\to\mathbb R$ has the property that $f(x_0)<f(x_1)<\cdots$
-and each $f(x_i)<f(x_\infty)$. Then the monotone convergence theorem implies
-that $\lim_{i\to\infty}f(x_i)$ converges, which in turn implies that
-$\lim_{i\to\infty}(f(x_{i+1})-f(x_i))=0$. This suggests a general \emph{law
+and each $f(x_i)<f(y)$. Then the monotone convergence theorem implies
+that $\lim_{i\to\infty}f(x_i)$ converges to some finite value.
+This suggests a general \emph{law
 of diminishing returns}: any time a non-Archimedean significantly-ordered
 structure $(X,\ll)$ is measured using
 real numbers, if the measurement does not blatantly violate $\ll$ (in other
-words, if there are no $x\ll y$ such that $x$ is given a larger real-number
-measurement than $y$), then there will inevitably be elements $x_0\ll x_1\ll \cdots$
+words, if there are no $x_1\ll x_2$ such that $x_1$ is given a larger real-number
+measurement than $x_2$), then there will inevitably be elements $x_0\ll x_1\ll \cdots$
 exhibiting \emph{diminishing returns}, in the sense that the measurements of
-$x_i$ and $x_j$ are approximately equal for large $i,j$.
+$x_i$ and $x_j$ are approximately equal for all large enough $i,j$.
 If human intelligence is non-Archimedean, this could potentially shed light on
 a psychometrical phenomenon called \emph{Spearman's Law of Diminishing Returns}
 \citep{spearman1927abilities, blum2017spearman, hernandez2019ai}, the empirical
@@ -291,12 +290,12 @@ dominate the test result differences as the true results plateau.
     \begin{itemize}
         \item
         (Sets)
-        Say that set $U$ is significantly smaller than set $V$ if there is an injective
-        function from $U$ into $V$ but there is no bijective function from $U$
-        onto $V$. It is easy to show there are sets $U_0,U_1,\ldots$, with each
-        $U_{i}$ significantly smaller than $U_{i+1}$, and each $U_i$ is
+        Say that set $x_1$ is significantly smaller than set $x_2$ if there is an injective
+        function from $x_1$ into $x_2$ but there is no bijective function from $x_1$
+        onto $x_2$. It is easy to show there are sets $x_0,x_1,\ldots$, with each
+        $x_{i}$ significantly smaller than $x_{i+1}$, and each $x_i$ is
         significantly smaller than
-        $U_\infty=\cup_{i=0}^\infty U_i$.
+        $y=\cup_{i=0}^\infty x_i$.
         Thus, sets are
         non-Archimedean. In the field of \emph{set theory}, mathematicians measure
         the size of sets using Georg Cantor's famous non-Archimedean number system,
@@ -304,25 +303,25 @@ dominate the test result differences as the true results plateau.
         \item
         (Logical theories)
         It is not difficult to come up with (for example) true
-        theories $T_0,T_1,\ldots$ (in the language of arithmetic) such that
-        each $T_{i+1}$ proves the consistency of $T_i$, and an additional
-        true theory $T_\infty$ (in the language of arithmetic)
-        which proves the consistency of $\cup_{i=0}^\infty T_i$.
-        In a sense, then, each $T_i$ is significantly weaker than $T_{i+1}$
-        (see G\"odel's incompleteness theorems), and each $T_i$ is
-        significantly weaker than $T_\infty$. In this sense, logical theories
+        theories $x_0,x_1,\ldots$ (in the language of arithmetic) such that
+        each $x_{i+1}$ proves the consistency of $x_i$, and an additional
+        true theory $y$ (in the language of arithmetic)
+        which proves the consistency of $\cup_{i=0}^\infty x_i$.
+        In a sense, then, each $x_i$ is significantly weaker than $x_{i+1}$
+        (see G\"odel's incompleteness theorems), and each $x_i$ is
+        significantly weaker than $y$. In this sense, logical theories
         are non-Archimedean. In the field
         of \emph{proof theory} \citep{pohlers2008proof, rathjen},
         logicians measure the logical strength of theories using computable
         ordinal numbers, another non-Archimedean number system.
         \item
         (Asymptotic runtime complexities)
-        Suppose $A_0,A_1,\ldots$ are algorithms such that each $A_i$ has
-        runtime complexity $\Theta(n^i)$, and suppose $A_\infty$ is an algorithm
+        Suppose $x_0,x_1,\ldots$ are algorithms such that each $x_i$ has
+        runtime complexity $\Theta(n^i)$, and suppose $y$ is an algorithm
         with runtime complexity $\Theta(2^n)$. Then in a certain sense, each
-        $A_{i}$ has significantly lower asymptotic runtime complexity than $A_{i+1}$,
-        and each $A_i$ has significantly lower asymptotic runtime complexity than
-        $A_\infty$. In this sense, asymptotic runtime complexity is non-Archimedean.
+        $x_{i}$ has significantly lower asymptotic runtime complexity than $x_{i+1}$,
+        and each $x_i$ has significantly lower asymptotic runtime complexity than
+        $y$. In this sense, asymptotic runtime complexity is non-Archimedean.
         In computer science, these runtime complexities are usually measured using
         big-$O$, big-$\Theta$, or similar notation systems.
     \end{itemize}
@@ -339,10 +338,10 @@ dominate the test result differences as the true results plateau.
         (Musical beauty)
         Assuming there is such a thing as objective
         musical beauty (not contingent on features of the human condition, etc.),
-        then it is plausible that music might be non-Archimedean, in the following
-        sense: there might be songs $S_0,S_1,\ldots$ such that each $S_i$
-        is significantly less beautiful than $S_{i+1}$, and another song
-        $S_\infty$ such that each $S_i$ is significantly less beautiful than $S_\infty$.
+        then it is plausible that musical beauty might be non-Archimedean, in the following
+        sense: there might be songs $x_0,x_1,\ldots$ such that each $x_i$
+        is significantly less beautiful than $x_{i+1}$, and another song
+        $y$ such that each $x_i$ is significantly less beautiful than $y$.
         \item
         (Ethical utility)
         Early utilitarian Jeremy Bentham suggested a hedonistic
@@ -365,11 +364,11 @@ dominate the test result differences as the true results plateau.
         better}:
         ``The very day you start, you will go home a better man, and the same thing
         will happen the day after. Every day, day after day, you will get better
-        and better'' \citep{protagoras}.} AGIs $A_0,A_1,\ldots$ such that
-        each $A_{i}$ is significantly less
-        intelligent than $A_{i+1}$, and another AGI $A_\infty$ such that each $A_i$
+        and better'' \citep{protagoras}.} AGIs $x_0,x_1,\ldots$ such that
+        each $x_{i}$ is significantly less
+        intelligent than $x_{i+1}$, and another AGI $y$ such that each $x_i$
         is significantly less
-        intelligent than $A_\infty$. We first pointed this out in
+        intelligent than $y$. We first pointed this out in
         \citep{alexander2019measuring}, where we propose measuring the
         intelligence of mechanical
         knowing agents using computable ordinals, the same non-Archimedean number system
