@@ -771,14 +771,18 @@ $x_0,x_1,\ldots$ such that the following conditions hold:
     \item
     Each $x_i\ll y$.
 \end{enumerate}
-We say $(X,\ll)$ is \emph{$2$-Archimedean} if $(X,\ll')$ is Archimedean.
+We say $(X,\ll)$ is \emph{$2$-Archimedean} if
+the following condition holds.
+For every $X$-sequence $x_0\ll' x_1\ll' x_2\ll' \cdots$
+and every $y\in X$, there is some $i$
+such that $y\ll x_i$.
 \end{definition}
 
 To be 2-Archimedean is a weaker condition than to be Archimedean, but it is
 still a condition, and one which there is no evident reason to assume should
 necessarily constrain reinforcement learning rewards in broad generality.
 For example, just as it is unclear whether musical beauty is Archimedean,
-in like wise it is not even clear whether musical beauty is even $2$-Archimedean.
+likewise, it is unclear whether musical beauty is even $2$-Archimedean.
 If musical beauty is not $2$-Archimedean,
 then Example \ref{musicalexample} does not merely suggest the
 inadequacy of using real numbers for rewards, but of using any $2$-Archimedean number
@@ -840,16 +844,16 @@ $x_{i+1}>x_{i}$, this implies $o(x_{i+1})<o(x_{i})$.
 Since $x_{i+1}\ll b$, this implies $o(b)\geq o(x_{i+1})>o(x_i)$.
 By minimality of $i$, $o(x_i)=o(x_0)=o(a)$, so $o(a)>o(b)$, as desired. This proves Claim 2.
 
-Finally we prove the lemma. Suppose $x_0\ll' x_1\ll' \cdots$, and let
+Finally we prove the theorem. Suppose $x_0\ll' x_1\ll' \cdots$, and let
 $y$ be any formal Laurent series, we must show there is some $i$ such that
 $y\ll x_i$. By Claim 1, $x_1,x_2,\ldots\geq 0$.
+Since $x_1\geq 0$ and $x_1\ll' x_2$, it follows that $x_i>0$ for all $i\geq 2$.
 By Claim 2, for all $i\geq 1$, $o(x_{i+1})<o(x_i)$.
-Since $o$ is an integer-valued function, it follows that there is some $i>0$
-such that $o(x_i)<o(y)$. By Claim 1, $y\geq 0$. Since $x_i\geq 0$ and $y\geq 0$
-and $o(x_i)<o(y)$, it follows $y\ll x_i$.
+Since $o$ is an integer-valued function, it follows that there is some $i\geq 2$
+such that $o(x_i)<o(y)$.
+Thus we are in the case where $o(y)>o(x_i)$ and (since $x_i> 0$) $LC(x_i)>0$,
+so by Definition \ref{significantorderednessoflaurent}, $y\ll x_i$.
 \end{proof}
-
-
 
 
 \subsubsection{Hyperreal numbers}
