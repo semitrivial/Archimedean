@@ -641,14 +641,22 @@ A \emph{formal Laurent series} is a formal expression of the following form
 (where $m$ can be any integer and $a_{-m},a_{-(m-1)},\ldots,a_0,a_1,a_2,\ldots$
 are real numbers, $a_{-m}\not=0$):
 \[
-\sum_{i=-m}^\infty a_i \epsilon^i.
+\sum_{j=-m}^\infty a_j \epsilon^j.
 \]
-Suppose $A=\sum_{i=-m}^\infty a_i\epsilon^i$
-and $B=\sum_{i=-n}^\infty b_i\epsilon^i$ are two distinct formal Laurent series.
-We declare $A<B$ if and only if $a_i<b_i$ where $i$ is the smallest
-index such that $a_i\not=b_i$ (where we consider $a_i$ to be $0$ for all
-$i<-m$ and we consider $b_i$ to be $0$ for all $i<-n$).
+Suppose $A=\sum_{j=-m}^\infty a_j\epsilon^j$
+and $B=\sum_{j=-n}^\infty b_j\epsilon^j$ are two distinct formal Laurent series.
+We declare $A<B$ if and only if $a_j<b_j$ where $j$ is the smallest
+index such that $a_j\not=b_j$ (where we consider $a_j$ to be $0$ for all
+$j<-m$ and we consider $b_j$ to be $0$ for all $j<-n$).
 \end{definition}
+
+For brevity, we will write $a\epsilon^b$ for the formal Laurent series
+$\sum_{j=-m}^{\infty} a_j\epsilon^j$ where $a_b=a$ and $a_j=0$ for all $j\not=0$.
+Likewise, we may write, for example, $5\epsilon^{-1}+2\epsilon^3$ for the
+formal Laurent series $\sum_{j=-m}^{\infty} a_j\epsilon^j$ where $a_{-1}=5$,
+$a_3=2$, and $a_j=0$ for all $j\not\in\{-1,3\}$, and similarly for other
+finite sums of powers of $\epsilon$.
+% Thus, $o(a\epsilon^b)=b$ (provided $a\not=0$), and $LC(a\epsilon^b)=a$.
 
 We can consider the real numbers $\mathbb R$ to be embedded in the formal Laurent
 series by way of the embedding $r\mapsto r\epsilon^0$. Having done so, the intuition is that,
@@ -660,8 +668,8 @@ smaller than every
 positive first-order infinitesimal number; and so on. Likewise,
 $1\epsilon^{-1}$ is what we might call a ``first-order infinite number'', bigger than
 every real; $1\epsilon^{-2}$ is what we might call a ``second-order infinite number'', bigger
-than every first-order infinite number; and so on. Thus, the formal Laurent series are
-quite adequate to address the specific problem described by
+than every first-order infinite number; and so on. Thus, the formal Laurent series
+should suffice to address the specific problem described by
 \cite{wirth2017survey} in which an infinite negative reward is required when the
 RL agent kills the cancer patient.
 
@@ -693,13 +701,13 @@ Lemma \ref{generalizedarchimedeanlemma}.
 \label{significantorderednessoflaurent}
 \begin{enumerate}
 \item
-For every Laurent series $A=\sum_{i=-m}^\infty a_i\epsilon^i$, let $o(A)=-m$ (call this the
+For every Laurent series $A=\sum_{j=-m}^\infty a_j\epsilon^j$, let $o(A)=-m$ (call this the
 \emph{order} of $A$), and let $LC(A)$ be the $\epsilon^{o(A)}$-coefficient of $A$ (call
 this the \emph{leading coefficient} of $A$).
 \item
 Let $r>0$ be any positive real number.
-For any formal Laurent series $A=\sum_{i=-m}^\infty a_i\epsilon^i$
-and $B=\sum_{i=-n}^\infty b_i\epsilon^i$,
+For any formal Laurent series $A=\sum_{j=-m}^\infty a_j\epsilon^j$
+and $B=\sum_{j=-n}^\infty b_j\epsilon^j$,
 we say $A\ll_r B$ if one of the following conditions holds:
     \begin{itemize}
         \item
@@ -733,10 +741,6 @@ structure according to $\ll_r$, are non-Archimedean.
     above statement fails, thereby showing that the formal Laurent series
     are non-Archimedean.
 
-    For brevity, we will write $a\epsilon^b$ for the formal Laurent series
-    $\sum_{i=-m}^{\infty} a_i\epsilon^i$ where $a_b=a$ and $a_i=0$ for all $i\not=0$.
-    Thus, $o(a\epsilon^b)=b$ (provided $a\not=0$), and $LC(a\epsilon^b)=a$.
-
     Let $x_0=r\epsilon^1$, $x_1=2r\epsilon^1$, $x_2=3r\epsilon^1$, and in general let
     $x_i=(i+1)r\epsilon^1$. Let $y=1\epsilon^0$.
     Thus $o(x_0)=o(x_1)=o(x_2)=\cdots=1$,
@@ -755,13 +759,13 @@ structure according to $\ll_r$, are non-Archimedean.
 Unfortunately, although the formal Laurent series contain infinities and infinitesimals,
 in a sense we will make formal, they still do not contain ``enough'' infinities and
 infinitesimals to accomodate the fully general environments that an AGI should be able
-to attempt to operate in. To make this formal, we introduce a weaker
+to navigate. To make this formal, we introduce a weaker
 notion of Archimedeanness.
 
 \begin{definition}
 Suppose $(X,\ll)$ is a significantly-ordered structure.
 We define a new order $\ll'$ on $X$ as follows.
-For any $x,y\in X$, we declare $x\ll' y$ if and only if there is a sequence
+For any $x,y\in X$, we declare $x\ll' y$ if and only if there is an $X$-sequence
 $x_0,x_1,\ldots$ such that the following conditions hold:
 \begin{enumerate}
     \item
@@ -773,8 +777,8 @@ $x_0,x_1,\ldots$ such that the following conditions hold:
 \end{enumerate}
 We say $(X,\ll)$ is \emph{$2$-Archimedean} if
 the following condition holds.
-For every $X$-sequence $x_0\ll' x_1\ll' x_2\ll' \cdots$
-and every $y\in X$, there is some $i$
+For every $X$-sequence $x_0\ll' x_1\ll' x_2\ll' \cdots$,
+for every $y\in X$, there is some $i$
 such that $y\ll x_i$.
 \end{definition}
 
