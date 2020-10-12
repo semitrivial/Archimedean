@@ -775,27 +775,27 @@ $x_0,x_1,\ldots$ such that the following conditions hold:
     \item
     Each $x_i\ll y$.
 \end{enumerate}
-We say $(X,\ll)$ is \emph{$2$-Archimedean} if
+We say $(X,\ll)$ is \emph{semi-Archimedean} if
 the following condition holds.
 For every $X$-sequence $x_0\ll' x_1\ll' x_2\ll' \cdots$,
 for every $y\in X$, there is some $i$
 such that $y\ll x_i$.
 \end{definition}
 
-To be 2-Archimedean is a weaker condition than to be Archimedean, but it is
+To be semi-Archimedean is a weaker condition than to be Archimedean, but it is
 still a condition, and one which there is evidently no reason to assume should
 constrain reinforcement learning rewards in general.
 For example, just as it is unclear whether musical beauty is Archimedean,
-likewise, it is unclear whether musical beauty is even $2$-Archimedean.
-If musical beauty is not $2$-Archimedean,
+likewise, it is unclear whether musical beauty is even semi-Archimedean.
+If musical beauty is not semi-Archimedean,
 then Example \ref{musicalexample} does not merely suggest the
-inadequacy of real number rewards, but of rewards from any $2$-Archimedean number
+inadequacy of real number rewards, but of rewards from any semi-Archimedean number
 system. And if musical beauty is too informal,
 we can still fall back to Example \ref{theoryexample}
 (the example about making the agent type up mathematical theories),
-for the strength of mathematical theories can be shown to be non-$2$-Archimedean.
+for the strength of mathematical theories can be shown to not be semi-Archimedean.
 
-In the following theorem, we show that the formal Laurent series are $2$-Archimedean.
+In the following theorem, we show that the formal Laurent series are semi-Archimedean.
 By the above paragraph, we consider this to be evidence that not only is
 traditional reinforcement learning unlikely to lead to AGI (on account of its rewards
 being too restrictive); but even if we extended reinforcement learning to permit
@@ -805,7 +805,7 @@ to AGI.
 \begin{theorem}
 \label{tedioustheorem}
 For any real $r>0$,
-the formal Laurent series are $2$-Archimedean when considered as a
+the formal Laurent series are semi-Archimedean when considered as a
 significantly-ordered structure as in Definition \ref{significantorderednessoflaurent}.
 \end{theorem}
 
@@ -880,7 +880,7 @@ comparators of the utility-maximizing ability of traditional deterministic RL ag
 and prove structural properties about said comparators.
 In fact, in that paper, we essentially independently re-invented the free ultrafilter
 construction of the hyperreals, without realizing it at the time!}.
-It can be shown that the hyperreals are not even $2$-Archimedean (much less Archimedean).
+It can be shown that the hyperreals are not even semi-Archimedean (much less Archimedean).
 Thus, for the purpose of
 proving abstract theorems about RL agents with fully generalized rewards, the hyperreals
 would be more appropriate than the formal Laurent series.
