@@ -281,7 +281,7 @@ a psychometrical phenomenon called \emph{Spearman's Law of Diminishing Returns}
 \citep{spearman1927abilities, blum2017spearman, hernandez2019ai}, the empirical
 tendency of cognitive ability tests to be less correlated in
 high-intelligence populations. Even tiny measurement errors would eventually
-dominate the test result differences as the true results plateau.
+dominate the test result differences as the true measurements plateau.
 \end{remark}
 
 \begin{example}
@@ -445,7 +445,7 @@ robotic surgeon could take, each one significantly worse than the previous,
 but all still significantly better than killing the patient. There is no way
 to assign real-valued rewards to these actions, and to killing the patient,
 in such a way that each bad action gets punished significantly harsher than
-the previous, but still significantly more forgiving than the punishment for
+the previous, but still significantly more forgivingly than the punishment for
 killing the patient.
 
 The reader might object by challenging the non-Archimedeanness
@@ -637,23 +637,21 @@ real-number-extending number system (which he called the ``superreals'', but
 that vocabulary does not seem to have caught on).
 
 \begin{definition}
-A \emph{formal Laurent series} is a formal expression of the following form
-(where $m$ can be any integer and $a_{-m},a_{-(m-1)},\ldots,a_0,a_1,a_2,\ldots$
-are real numbers, $a_{-m}\not=0$):
+A \emph{formal Laurent series} is a formal expression of the form
 \[
-\sum_{j=-m}^\infty a_j \epsilon^j.
+\sum_{j=-\infty}^\infty a_j \epsilon^j
 \]
-Suppose $A=\sum_{j=-m}^\infty a_j\epsilon^j$
-and $B=\sum_{j=-n}^\infty b_j\epsilon^j$ are two distinct formal Laurent series.
+such that there is some integer $j_0$ such that $a_j=0$ for all $j<j_0$.
+Suppose $A=\sum_{j=-\infty}^\infty a_j\epsilon^j$
+and $B=\sum_{j=-\infty}^\infty b_j\epsilon^j$ are two distinct formal Laurent series.
 We declare $A<B$ if and only if $a_j<b_j$ where $j$ is the smallest
-index such that $a_j\not=b_j$ (where we consider $a_j$ to be $0$ for all
-$j<-m$ and we consider $b_j$ to be $0$ for all $j<-n$).
+index such that $a_j\not=b_j$.
 \end{definition}
 
 For brevity, we will write $a\epsilon^b$ for the formal Laurent series
-$\sum_{j=-m}^{\infty} a_j\epsilon^j$ where $a_b=a$ and $a_j=0$ for all $j\not=0$.
+$\sum_{j=-infty}^{\infty} a_j\epsilon^j$ where $a_b=a$ and $a_j=0$ for all $j\not=0$.
 Likewise, we may write, for example, $5\epsilon^{-1}+2\epsilon^3$ for the
-formal Laurent series $\sum_{j=-m}^{\infty} a_j\epsilon^j$ where $a_{-1}=5$,
+formal Laurent series $\sum_{j=-\infty}^{\infty} a_j\epsilon^j$ where $a_{-1}=5$,
 $a_3=2$, and $a_j=0$ for all $j\not\in\{-1,3\}$, and similarly for other
 finite sums of powers of $\epsilon$.
 % Thus, $o(a\epsilon^b)=b$ (provided $a\not=0$), and $LC(a\epsilon^b)=a$.
@@ -688,7 +686,7 @@ discussed below.
     we compare their $\epsilon^1$-coefficients. $A$ has an $\epsilon^1$-coefficient of $3$ and
     $B$ has an $\epsilon^1$-coefficient of $1$, and $3>1$, so $A>B$.
     \item Consider $A=999999\epsilon^5$ and $B=0.00001\epsilon^{4}$.
-    We consider $A$ to have an $\epsilon^{4}$-coefficient of $0$, which is smaller than
+    The $\epsilon^{4}$-coefficient of $A$ is $0$, which is smaller than
     $B$'s $\epsilon^{4}$-coefficient ($0.00001$), so $A<B$.
 \end{enumerate}
 \end{example}
@@ -701,13 +699,16 @@ Lemma \ref{generalizedarchimedeanlemma}.
 \label{significantorderednessoflaurent}
 \begin{enumerate}
 \item
-For every Laurent series $A=\sum_{j=-m}^\infty a_j\epsilon^j$, let $o(A)=-m$ (call this the
-\emph{order} of $A$), and let $LC(A)$ be the $\epsilon^{o(A)}$-coefficient of $A$ (call
-this the \emph{leading coefficient} of $A$).
+For every Laurent series $A=\sum_{j=-\infty}^\infty a_j\epsilon^j$,
+let $o(A)$ (the \emph{order} of $A$)
+be the smallest integer $j$ such that $a_j\not=0$, or $o(A)=\infty$ if
+there is no such $j$.
+Let $LC(A)$ (the \emph{leading coefficient} of $A$)
+be the $\epsilon^{o(A)}$-coefficient of $A$, or $0$ if $o(A)=\infty$.
 \item
 Let $r>0$ be any positive real number.
-For any formal Laurent series $A=\sum_{j=-m}^\infty a_j\epsilon^j$
-and $B=\sum_{j=-n}^\infty b_j\epsilon^j$,
+For any formal Laurent series $A=\sum_{j=-\infty}^\infty a_j\epsilon^j$
+and $B=\sum_{j=-\infty}^\infty b_j\epsilon^j$,
 we say $A\ll_r B$ if one of the following conditions holds:
     \begin{itemize}
         \item
@@ -776,10 +777,12 @@ $x_0,x_1,\ldots$ such that the following conditions hold:
     Each $x_i\ll y$.
 \end{enumerate}
 We say $(X,\ll)$ is \emph{semi-Archimedean} if
-the following condition holds.
-For every $X$-sequence $x_0\ll' x_1\ll' x_2\ll' \cdots$,
-for every $y\in X$, there is some $i$
-such that $y\ll x_i$.
+the following condition holds:
+\begin{itemize}
+    For every $X$-sequence $x_0\ll' x_1\ll' x_2\ll' \cdots$,
+    for every $y\in X$, there is some $i$
+    such that $y\ll x_i$.
+\end{itemize}
 \end{definition}
 
 To be semi-Archimedean is a weaker condition than to be Archimedean, but it is
@@ -791,14 +794,12 @@ If musical beauty is not semi-Archimedean,
 then Example \ref{musicalexample} does not merely suggest the
 inadequacy of real number rewards, but of rewards from any semi-Archimedean number
 system. And if musical beauty is too informal,
-we can still fall back to Example \ref{theoryexample}
-(the example about making the agent type up mathematical theories),
-for the strength of mathematical theories can be shown to not be semi-Archimedean.
+we can still fall back to mathematical theories (Example \ref{theoryexample}),
+for the strength of mathematical theories can be shown not to be semi-Archimedean.
 
 In the following theorem, we show that the formal Laurent series are semi-Archimedean.
-By the above paragraph, we consider this to be evidence that not only is
-traditional reinforcement learning unlikely to lead to AGI (on account of its rewards
-being too restrictive); but even if we extended reinforcement learning to permit
+By the above paragraph, this suggests that even if we extended reinforcement
+learning to permit
 formal Laurent series rewards, the resulting framework would still probably not lead
 to AGI.
 
@@ -850,10 +851,10 @@ By minimality of $i$, $o(x_i)=o(x_0)=o(a)$, so $o(a)>o(b)$, as desired. This pro
 
 Finally we prove the theorem. Suppose $x_0\ll' x_1\ll' \cdots$, and let
 $y$ be any formal Laurent series, we must show there is some $i$ such that
-$y\ll x_i$. By Claim 1, $x_1,x_2,\ldots\geq 0$.
-Since $x_1\geq 0$ and $x_1\ll' x_2$, it follows that $x_i>0$ for all $i\geq 2$.
+$y\ll x_i$. By Claim 1, $x_1\geq 0$.
+Since $x_1\geq 0$ and $x_1\ll' x_2\ll'\cdots$, it follows that $x_i>0$ for all $i\geq 2$.
 By Claim 2, for all $i\geq 1$, $o(x_{i+1})<o(x_i)$.
-Since $o$ is an integer-valued function, it follows that there is some $i\geq 2$
+It follows that there is some $i\geq 2$
 such that $o(x_i)<o(y)$.
 Thus we are in the case where $o(y)>o(x_i)$ and (since $x_i> 0$) $LC(x_i)>0$,
 so by Definition \ref{significantorderednessoflaurent}, $y\ll x_i$.
